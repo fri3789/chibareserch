@@ -283,6 +283,7 @@
       transition: transform 0.3s;
     }
 
+    /* タブコンテンツ - 修正箇所 */
     .tab-content {
       max-height: 0;
       overflow: hidden;
@@ -291,7 +292,7 @@
     }
 
     .tab-content.open {
-      max-height: 3000px; /* 規約が長いので大きめに */
+      max-height: 5000px; /* PC用 */
     }
 
     .tab-inner {
@@ -386,7 +387,8 @@
     }
 
     /* ====================================
-       レスポンシブデザイン
+       レスポンシブデザイン（スマホ対応）
+       【修正箇所：モバイルで規約が全て表示されるよう調整】
     ==================================== */
     @media screen and (max-width: 767px) {
       .container {
@@ -394,7 +396,7 @@
       }
 
       .content {
-        padding: 25px 15px;
+        padding: 20px 12px;
         border-radius: 30px;
       }
 
@@ -404,7 +406,8 @@
       }
 
       .message {
-        font-size: 24px;
+        font-size: 22px;
+        margin: 30px 0;
       }
 
       .flower {
@@ -416,57 +419,139 @@
       }
 
       .email {
-        font-size: 20px;
-        padding: 8px 15px;
+        font-size: 18px;
+        padding: 8px 12px;
+        word-break: break-all;
       }
 
       .contact-box {
-        padding: 20px;
+        padding: 20px 15px;
         margin: 30px auto;
       }
 
       .line-info {
         font-size: 18px;
-        padding: 20px;
+        padding: 20px 15px;
+        margin: 30px 0;
       }
 
+      /* タブ関連 - モバイル最適化 */
       .tab-header {
-        padding: 15px;
+        padding: 15px 12px;
         font-size: 16px;
       }
 
-      .tab-inner {
-        padding: 20px;
+      .tab-header .flower-icon {
+        font-size: 20px;
+        margin-right: 8px;
       }
 
+      /* ★★★ 最重要修正：モバイルでタブ内を全て表示 ★★★ */
+      .tab-content.open {
+        max-height: 10000px; /* モバイルではさらに大きく確保 */
+      }
+
+      .tab-inner {
+        padding: 15px 12px;
+      }
+
+      /* フォントサイズ調整 */
       .tab-inner h2 {
-        font-size: 22px;
+        font-size: 20px;
+        margin: 20px 0 12px;
+        padding-bottom: 6px;
       }
 
       .tab-inner h3 {
-        font-size: 19px;
+        font-size: 18px;
+        margin: 18px 0 10px;
       }
 
-      .tab-inner ul, .tab-inner ol {
-        margin: 10px 0 15px 20px;
+      .tab-inner p {
+        font-size: 14px;
+        margin: 10px 0;
+        line-height: 1.7;
+      }
+
+      .tab-inner li {
+        font-size: 14px;
+        margin: 6px 0;
+        line-height: 1.6;
+      }
+
+      .tab-inner ul, 
+      .tab-inner ol {
+        margin: 8px 0 15px 20px;
+      }
+
+      /* ボックスの余白を調整 */
+      .rule-box,
+      .important-rule,
+      .legal-warning {
+        padding: 12px;
+        margin: 15px 0;
+      }
+
+      .legal-warning {
+        padding: 15px 12px;
+      }
+
+      /* 規約の文字が小さくなりすぎないように */
+      .legal-warning,
+      .important-rule {
+        font-size: 14px;
+      }
+
+      /* 連絡先メールが切れないように */
+      .email {
+        font-size: 16px;
+        padding: 8px 10px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      /* フッター */
+      footer {
+        margin-top: 40px;
+        padding: 20px 15px 15px;
+        font-size: 13px;
       }
     }
 
-    @media screen and (max-width: 480px) {
+    /* さらに小さい画面用 */
+    @media screen and (max-width: 375px) {
       h1 {
-        font-size: 26px;
+        font-size: 28px;
       }
 
       .message {
         font-size: 20px;
       }
 
-      .email {
+      .tab-inner h2 {
+        font-size: 18px;
+      }
+
+      .tab-inner h3 {
         font-size: 16px;
       }
 
-      .flower {
-        font-size: 24px;
+      .tab-inner p,
+      .tab-inner li,
+      .legal-warning,
+      .important-rule {
+        font-size: 13px;
+      }
+
+      .email {
+        font-size: 14px;
+      }
+    }
+
+    /* 印刷時 */
+    @media print {
+      .petal-container {
+        display: none;
       }
     }
   </style>
@@ -604,7 +689,7 @@
           </div>
         </div>
 
-        <!-- タブ3: 活動内容（修正済み：月3回ほど実施・変動あり） -->
+        <!-- タブ3: 活動内容 -->
         <div class="tab">
           <div class="tab-header" onclick="toggleTab(this)">
             <span><span class="flower-icon">🌼</span> 活動内容</span>
