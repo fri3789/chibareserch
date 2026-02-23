@@ -1,172 +1,836 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>千葉市・八千代市 ソフトバレーボール完全攻略ツール 2026年対応</title>
-<style>
-    body {font-family:"メイリオ",sans-serif;background:#f8fdfd;margin:0;padding:20px;line-height:1.7;}
-    .box {max-width:1600px;margin:auto;background:white;border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,0.15);overflow:hidden;}
-    header {background:linear-gradient(135deg,#1e88e5,#00c853);color:white;padding:50px;text-align:center;font-size:38px;}
-    .main {padding:40px;}
-    select, button {padding:16px;font-size:20px;margin:12px 0;width:100%;border-radius:12px;border:2px solid #1e88e5;box-sizing:border-box;}
-    button {background:#ff5722;color:white;font-weight:bold;cursor:pointer;transition:0.3s;}
-    button:hover {background:#e64a19;transform:scale(1.03);}
-    .result {margin-top:30px;padding:30px;background:#e8f5e8;border-radius:15px;display:none;overflow-x:auto;}
-    table {width:100%;min-width:1300px;border-collapse:collapse;margin:20px 0;font-size:15px;}
-    th, td {padding:12px;border:1px solid #81c784;text-align:left;vertical-align:top;}
-    th {background:#4caf50;color:white;position:sticky;top:0;z-index:10;}
-    .level {padding:6px 12px;border-radius:20px;color:white;font-weight:bold;font-size:13px;}
-    .easy {background:#4caf50;}
-    .normal {background:#ff9800;}
-    .hard {background:#f44336;}
-    .fee {font-weight:bold;color:#d32f2f;}
-    .template {background:#f5f5f5;padding:12px;border-left:6px solid #2196f3;font-family:monospace;font-size:13px;white-space:pre-wrap;}
-    .rule {background:#e3f2fd;padding:30px;border-radius:15px;margin:40px 0;}
-    .soft {background:#fff3e0;padding:30px;border-radius:15px;margin:40px 0;}
-    .kaito {background:#1e88e5;color:white;padding:40px;text-align:center;font-size:28px;font-weight:bold;margin-top:60px;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自助グループ フリージア</title>
+  <style>
+    /* ====================================
+       全体設定
+    ==================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      background-color: #FAF9F6;
+      color: #333333;
+      line-height: 1.8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      padding: 20px;
+      position: relative;
+    }
+
+    /* ====================================
+       フリージアの花びらアニメーション（背景）
+    ==================================== */
+    .petal-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .petal {
+      position: absolute;
+      color: #FDBB2F;
+      font-size: 20px;
+      opacity: 0.2;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.3;
+      }
+      80% {
+        opacity: 0.2;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .petal:nth-child(1) { left: 10%; animation-duration: 8s; animation-delay: 0s; }
+    .petal:nth-child(2) { left: 30%; animation-duration: 10s; animation-delay: 2s; }
+    .petal:nth-child(3) { left: 50%; animation-duration: 7s; animation-delay: 1s; }
+    .petal:nth-child(4) { left: 70%; animation-duration: 12s; animation-delay: 3s; }
+    .petal:nth-child(5) { left: 90%; animation-duration: 9s; animation-delay: 0.5s; }
+    .petal:nth-child(6) { left: 20%; animation-duration: 11s; animation-delay: 1.5s; }
+    .petal:nth-child(7) { left: 40%; animation-duration: 8s; animation-delay: 2.5s; }
+    .petal:nth-child(8) { left: 60%; animation-duration: 13s; animation-delay: 0.8s; }
+    .petal:nth-child(9) { left: 80%; animation-duration: 9s; animation-delay: 3.2s; }
+    .petal:nth-child(10) { left: 95%; animation-duration: 10s; animation-delay: 1.2s; }
+
+    /* ====================================
+       メインコンテンツ
+    ==================================== */
+    .content {
+      position: relative;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(5px);
+      border-radius: 40px;
+      padding: 40px 30px;
+      box-shadow: 0 20px 40px rgba(253, 187, 47, 0.15);
+      border: 1px solid rgba(253, 187, 47, 0.3);
+    }
+
+    /* ====================================
+       ヘッダー（揺れるフリージア）
+    ==================================== */
+    .flower-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .flower-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .flower {
+      font-size: 40px;
+      display: inline-block;
+      animation: sway 3s ease-in-out infinite;
+      transform-origin: bottom center;
+    }
+
+    @keyframes sway {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(8deg); }
+      75% { transform: rotate(-8deg); }
+    }
+
+    .flower:nth-child(2) { animation-delay: 0.3s; }
+    .flower:nth-child(3) { animation-delay: 0.6s; }
+    .flower:nth-child(4) { animation-delay: 0.9s; }
+    .flower:nth-child(5) { animation-delay: 1.2s; }
+    .flower:nth-child(6) { animation-delay: 1.5s; }
+    .flower:nth-child(7) { animation-delay: 1.8s; }
+
+    .fade-in {
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ====================================
+       タイトル・メッセージ
+    ==================================== */
+    h1 {
+      font-size: 48px;
+      color: #FDBB2F;
+      text-align: center;
+      margin: 20px 0 10px;
+      font-weight: 300;
+      letter-spacing: 4px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+      animation: fadeIn 1.8s ease-out;
+    }
+
+    .sub-title {
+      font-size: 18px;
+      color: #8B6B4D;
+      text-align: center;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .message {
+      font-size: 32px;
+      text-align: center;
+      line-height: 1.6;
+      margin: 40px 0;
+      color: #333333;
+      font-weight: 300;
+      animation: fadeIn 2.2s ease-out;
+    }
+
+    /* ====================================
+       連絡先ボックス
+    ==================================== */
+    .contact-box {
+      background: linear-gradient(135deg, #FDBB2F15 0%, #FFE5A3 100%);
+      border: 2px solid #FDBB2F;
+      border-radius: 60px;
+      padding: 30px;
+      max-width: 550px;
+      margin: 40px auto;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(253, 187, 47, 0.2);
+      animation: fadeIn 2.4s ease-out;
+    }
+
+    .contact-label {
+      font-size: 16px;
+      color: #8B6B4D;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .email {
+      font-size: 28px;
+      font-weight: bold;
+      color: #FDBB2F;
+      word-break: break-all;
+      margin: 15px 0;
+      padding: 12px 25px;
+      background-color: white;
+      border-radius: 50px;
+      display: inline-block;
+      border: 1px solid #FDBB2F40;
+    }
+
+    .role {
+      font-size: 18px;
+      color: #8B6B4D;
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    .line-info {
+      text-align: center;
+      font-size: 20px;
+      color: #555;
+      margin: 40px 0;
+      padding: 25px;
+      background-color: #F5F0E6;
+      border-radius: 40px;
+      border-left: 6px solid #FDBB2F;
+      animation: fadeIn 2.6s ease-out;
+    }
+
+    /* ====================================
+       タブメニュー（チームマーメイド風）
+    ==================================== */
+    .tab-section {
+      margin-top: 60px;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #8B6B4D;
+      margin-bottom: 30px;
+      font-size: 22px;
+      font-weight: 300;
+    }
+
+    .tab {
+      margin-bottom: 15px;
+      border: 1px solid #FDBB2F;
+      border-radius: 20px;
+      overflow: hidden;
+      background-color: white;
+      transition: all 0.3s ease;
+    }
+
+    .tab:hover {
+      box-shadow: 0 5px 20px rgba(253, 187, 47, 0.2);
+    }
+
+    .tab-header {
+      background-color: #FDBB2F;
+      color: #333333;
+      padding: 18px 25px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s;
+    }
+
+    .tab-header:hover {
+      background-color: #FFD88F;
+    }
+
+    .tab-header .flower-icon {
+      font-size: 24px;
+      margin-right: 12px;
+    }
+
+    .toggle-icon {
+      font-size: 20px;
+      transition: transform 0.3s;
+    }
+
+    .tab-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s ease-out;
+      background-color: #FFFFFF;
+    }
+
+    .tab-content.open {
+      max-height: 3000px; /* 規約が長いので大きめに */
+    }
+
+    .tab-inner {
+      padding: 30px;
+    }
+
+    /* タブ内のスタイル */
+    .tab-inner h2 {
+      color: #FDBB2F;
+      font-size: 26px;
+      margin: 35px 0 20px;
+      border-bottom: 2px solid #FDBB2F;
+      padding-bottom: 10px;
+    }
+
+    .tab-inner h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .tab-inner h3 {
+      color: #8B6B4D;
+      font-size: 22px;
+      margin: 25px 0 15px;
+    }
+
+    .tab-inner p {
+      margin: 15px 0;
+      line-height: 1.9;
+    }
+
+    .tab-inner ul, .tab-inner ol {
+      margin: 15px 0 20px 35px;
+    }
+
+    .tab-inner li {
+      margin: 10px 0;
+    }
+
+    .rule-box {
+      background-color: #F9F5F0;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px 0;
+      border-left: 4px solid #8B6B4D;
+    }
+
+    .important-rule {
+      background-color: #FDBB2F15;
+      border-left: 6px solid #FDBB2F;
+      padding: 25px;
+      margin: 30px 0;
+      border-radius: 0 20px 20px 0;
+      font-weight: 500;
+    }
+
+    .legal-warning {
+      background-color: #FFF0F0;
+      border: 2px solid #FFB3B3;
+      padding: 25px;
+      margin: 35px 0;
+      border-radius: 15px;
+      color: #660000;
+    }
+
+    .legal-warning strong {
+      color: #CC0000;
+    }
+
+    .rule-number {
+      font-size: 20px;
+      color: #FDBB2F;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    /* ====================================
+       フッター
+    ==================================== */
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 30px 20px 20px;
+      color: #8B6B4D;
+      font-size: 15px;
+      border-top: 2px solid #FDBB2F30;
+    }
+
+    .footer-message {
+      font-size: 13px;
+      margin-top: 15px;
+      color: #999;
+    }
+
+    /* ====================================
+       レスポンシブデザイン
+    ==================================== */
+    @media screen and (max-width: 767px) {
+      .container {
+        padding: 10px;
+      }
+
+      .content {
+        padding: 25px 15px;
+        border-radius: 30px;
+      }
+
+      h1 {
+        font-size: 32px;
+        letter-spacing: 2px;
+      }
+
+      .message {
+        font-size: 24px;
+      }
+
+      .flower {
+        font-size: 30px;
+      }
+
+      .flower-row {
+        gap: 10px;
+      }
+
+      .email {
+        font-size: 20px;
+        padding: 8px 15px;
+      }
+
+      .contact-box {
+        padding: 20px;
+        margin: 30px auto;
+      }
+
+      .line-info {
+        font-size: 18px;
+        padding: 20px;
+      }
+
+      .tab-header {
+        padding: 15px;
+        font-size: 16px;
+      }
+
+      .tab-inner {
+        padding: 20px;
+      }
+
+      .tab-inner h2 {
+        font-size: 22px;
+      }
+
+      .tab-inner h3 {
+        font-size: 19px;
+      }
+
+      .tab-inner ul, .tab-inner ol {
+        margin: 10px 0 15px 20px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      h1 {
+        font-size: 26px;
+      }
+
+      .message {
+        font-size: 20px;
+      }
+
+      .email {
+        font-size: 16px;
+      }
+
+      .flower {
+        font-size: 24px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- 背景に舞う花びら（10枚） -->
+  <div class="petal-container">
+    <div class="petal">🌼</div>
+    <div class="petal">🌼</div>
+    <div class="petal">🌼</div>
+    <div class="petal">🌼</div>
+    <div class="petal">🌼</div>
+    <div class="petal">🌼</div>
+    <div class="petal">🌼</div>
+    <div class="petal">🌼</div>
+    <div class="petal">🌼</div>
+    <div class="petal">🌼</div>
+  </div>
 
-<div class="box">
-    <header>千葉市・八千代市 ソフトバレーボール<br>完全攻略ツール 2026年対応<br><small>25施設・料金・ルール・自宅練習・テンプレート全部入り</small></header>
-    
-    <div class="main">
-        <select id="city">
-            <option value="all">全2市（千葉市15施設・八千代市10施設）</option>
-            <option value="千葉市">千葉市だけ</option>
-            <option value="八千代市">八千代市だけ</option>
-        </select>
-        <select id="level">
-            <option value="all">入りやすさ：すべて表示</option>
-            <option value="easy">入りやすい（先着多め）</option>
-            <option value="normal">普通</option>
-            <option value="hard">激戦</option>
-        </select>
-        <button onclick="search()">今すぐ検索！</button>
+  <div class="container">
+    <div class="content">
+      <!-- ヘッダー：揺れるフリージア -->
+      <div class="flower-header">
+        <div class="flower-row">
+          <span class="flower">🌼</span>
+          <span class="flower">🌼</span>
+          <span class="flower">🌼</span>
+          <span class="flower">🌼</span>
+          <span class="flower">🌼</span>
+          <span class="flower">🌼</span>
+          <span class="flower">🌼</span>
+        </div>
+      </div>
 
-        <div id="result" class="result">
-            <h2>検索結果（<span id="summary"></span>）</h2>
-            <table id="table">
-                <thead>
-                    <tr>
-                        <th>入りやすさ</th><th>市区</th><th>施設名</th><th>面数</th>
-                        <th>料金（10人以上・2時間）</th><th>予約方法</th><th>抽選方法</th><th>コツ・入力テンプレート</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+      <!-- タイトル -->
+      <h1 class="fade-in">自助グループ フリージア</h1>
+      <div class="sub-title">〜心の拠り所を、あなたに〜</div>
+
+      <!-- メインメッセージ -->
+      <div class="message">
+        ここは、あなたの<br>心の拠り所
+      </div>
+
+      <!-- 連絡先ボックス -->
+      <div class="contact-box">
+        <div class="contact-label">📧 参加希望・お問い合わせ</div>
+        <div class="email">myufogill@outlook.jp</div>
+        <div class="role">代表</div>
+      </div>
+
+      <!-- LINE情報 -->
+      <div class="line-info">
+        💬 LINEグループで話したいことを共有できる場所<br>
+        <small style="font-size: 14px; opacity: 0.8;">（参加には代表の承認が必要です）</small>
+      </div>
+
+      <!-- タブメニュー（開閉式） -->
+      <div class="tab-section">
+        <div class="section-title">🌼 詳しい情報はタップして開いてください 🌼</div>
+
+        <!-- タブ1: この場所について -->
+        <div class="tab">
+          <div class="tab-header" onclick="toggleTab(this)">
+            <span><span class="flower-icon">🌼</span> この場所について</span>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="tab-content">
+            <div class="tab-inner">
+              <p>自助グループ フリージアは、精神科に通院されている方もそうでない方も、誰もが自分らしくいられる「心の拠り所」を目指しています。</p>
+              
+              <h2>🌼 私たちの理念</h2>
+              <p>みんなが楽しく集まり、支え合う場。悩みや喜びを共有し、心の拠り所に。障がいのある人も含め、差別なく参加OK。自分らしくいられる場を目指します。</p>
+              
+              <h2>👥 参加対象</h2>
+              <p>「支え合おう」の精神に賛同する人なら誰でも参加できます。</p>
+              <ul>
+                <li>精神科に通院されている方</li>
+                <li>そうでない方ももちろんOK</li>
+                <li>年齢、性別、障がいの有無は問いません</li>
+              </ul>
+              
+              <div class="important-rule">
+                <strong>💛 大切にしていること</strong>
+                <p style="margin-top: 10px;">無理をしない。話したいときに、話したいことを。見ているだけでも大丈夫。あなたのペースで過ごせる場所でありたいと思っています。</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- ソフトバレーボール競技ルール詳細 -->
-        <div class="rule">
-            <h2>ソフトバレーボール競技ルール詳細（日本ソフトバレーボール連盟準拠・2025年最新）</h2>
-            <table style="width:100%;background:white;">
-                <tr><th width="20%">項目</th><th>詳細内容</th></tr>
-                <tr><td>コートサイズ</td><td>13.4m × 5.5m（テニスコートと同じ）</td></tr>
-                <tr><td>ネット高さ</td><td>男子・混合：2m00cm　女子・シニア60歳以上：1m90cm</td></tr>
-                <tr><td>使用球</td><td>周囲78〜80cm、重さ210±10g、空気圧0.15〜0.20kg/cm²</td></tr>
-                <tr><td>チーム構成</td><td>コート内4人（控え最大4人）　男女混合は男子2人まで</td></tr>
-                <tr><td>試合形式</td><td>3セットマッチ（21-21-15点、2点差必要）</td></tr>
-                <tr><td>サーブ順・位置</td><td>右バックから時計回り。エンドライン外ならどこからでもOK</td></tr>
-                <tr><td>ローテーション</td><td>サーブ権を取ったチームだけ時計回り移動</td></tr>
-                <tr><td>タッチ数</td><td>最大3回（ブロックは含まない）</td></tr>
-                <tr><td>ネットタッチ</td><td>ボール以外で触ると即失点</td></tr>
-                <tr><td>センターライン</td><td>足が完全に越えなければOK</td></tr>
-                <tr><td>ブロック</td><td>ネット上で直接止めOK → ブロック後すぐ攻撃可（4回目扱い）</td></tr>
-                <tr><td>リベロ</td><td>なし</td></tr>
-                <tr><td>タイムアウト</td><td>1セット2回（30秒）</td></tr>
-            </table>
+        <!-- タブ2: 参加方法 -->
+        <div class="tab">
+          <div class="tab-header" onclick="toggleTab(this)">
+            <span><span class="flower-icon">🌼</span> 参加方法</span>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="tab-content">
+            <div class="tab-inner">
+              <h2>📋 参加までのステップ</h2>
+              
+              <div class="rule-box">
+                <h3>ステップ1：ご連絡ください</h3>
+                <p>下記のメールアドレスに参加希望の旨をお送りください。<br>
+                <strong style="color: #FDBB2F;">📧 myufogill@outlook.jp</strong></p>
+              </div>
+
+              <div class="rule-box">
+                <h3>ステップ2：代表から返信</h3>
+                <p>24時間以内に代表から返信があります。その際、以下のことをお知らせください：</p>
+                <ul>
+                  <li><strong>ニックネーム</strong>（匿名可。グループ内でのお名前）</li>
+                  <li><strong>緊急連絡先</strong>（任意。緊急時のみ使用）</li>
+                  <li><strong>配慮してほしいこと</strong>（手話、車椅子、ゆっくりした対応など）</li>
+                </ul>
+              </div>
+
+              <div class="rule-box">
+                <h3>ステップ3：LINEグループに招待</h3>
+                <p>確認後、代表がLINEグループに招待します。グループでは自由に投稿したり、他のメンバーと交流できます。</p>
+              </div>
+
+              <h2>📌 参加にあたっての注意</h2>
+              <ul>
+                <li><strong>未成年者の参加</strong>：中学生以下は保護者同伴（要事前連絡）。高校生以上は保護者の同意書をグループLINEで事前提出。</li>
+                <li><strong>同意書がない場合</strong>：法的責任を問う場合があります。</li>
+                <li><strong>参加費</strong>：LINEグループは無料。対面イベント参加時は会場費を実費でいただく場合があります（1回200〜400円程度）。</li>
+              </ul>
+
+              <div class="important-rule">
+                <strong>💛 安心して参加いただくために</strong>
+                <p>・障がいや特別ニーズ（手話、車椅子など）は事前連絡で対応します<br>
+                ・無理に話す必要はありません。見学だけでも大歓迎です<br>
+                ・個人情報は厳重に管理し、目的外には使用しません</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- 自宅練習メニュー（初心者〜上級） -->
-        <div class="soft">
-            <h2>ソフトバレーボール自宅練習メニュー（初心者〜中級）</h2>
-            <ul><li>壁パス100回</li><li>風船ラリー30秒キープ</li><li>タオルサーブ100本</li><li>シャドーレシーブ5分</li><li>部屋に紐を張ってミニゲーム</li></ul>
+        <!-- タブ3: 活動内容（修正済み：月3回ほど実施・変動あり） -->
+        <div class="tab">
+          <div class="tab-header" onclick="toggleTab(this)">
+            <span><span class="flower-icon">🌼</span> 活動内容</span>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="tab-content">
+            <div class="tab-inner">
+              <h2>💬 LINEグループでの活動（毎日）</h2>
+              <ul>
+                <li><strong>日常の共有</strong>：「今日は天気が良かった」「こんな本を読んだ」など、小さなことでもOK</li>
+                <li><strong>気持ちを話せる場所</strong>：「ちょっと疲れたな」「嬉しいことがあった」など、感情を共有できます</li>
+                <li><strong>情報交換</strong>：おすすめのリラックス方法、福祉サービス、趣味の情報など</li>
+              </ul>
+
+              <h2>🌼 定例会（月3回ほど実施・変動あり）</h2>
+              <ul>
+                <li><strong>おしゃべり会</strong>：オンライン（Zoom）または対面で、自由に会話を楽しみます</li>
+                <li><strong>ワークショップ</strong>：手芸、絵を描く、音楽を聴くなど、気軽に参加できる企画</li>
+                <li><strong>相談会（希望者のみ）</strong>：個別に話を聞いてほしい方向けの時間</li>
+              </ul>
+
+              <h2>📅 今後の予定</h2>
+              <p>グループLINEで随時お知らせしています。参加者同士でリクエストを出し合って企画を決めることもあります。</p>
+
+              <h2>🔄 中止・変更について</h2>
+              <p>天災や運営都合で変更・中止時はグループLINEで通知します。代替日程やオンライン開催を検討します。</p>
+            </div>
+          </div>
         </div>
 
-        <div class="soft">
-            <h2 style="color:#d32f2f;">ソフトバレーボール自宅上級練習メニュー（ガチ勢用）</h2>
-            <ul style="font-size:18px;line-height:2;">
-                <li>片手トス100回（左右別）</li>
-                <li>空中レシーブ（ジャンプしながら壁パス）</li>
-                <li>サーブ精度チャレンジ（マーカー10本中8本）</li>
-                <li>1人スパイクフォーム100本</li>
-                <li>ブロックシャドー30秒×10セット</li>
-                <li>360度レシーブ（回転→即反応）</li>
-                <li>連続オーバーパス200回ノーミス</li>
-            </ul>
-            <p style="font-weight:bold;color:#d32f2f;font-size:22px;">これを1週間続けたら体育館で無双できます</p>
+        <!-- タブ4: グループルール -->
+        <div class="tab">
+          <div class="tab-header" onclick="toggleTab(this)">
+            <span><span class="flower-icon">🌼</span> グループルール</span>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="tab-content">
+            <div class="tab-inner">
+              <h2>💛 みんなが安心して過ごすために</h2>
+              
+              <h3>✅ 大切にしたいこと</h3>
+              <ul>
+                <li>人の話を否定しない</li>
+                <li>無理に返信しなくてOK</li>
+                <li>個人情報は大事に扱う</li>
+                <li>画像の無断転載はしない</li>
+                <li>政治・宗教の勧誘は控える</li>
+              </ul>
+
+              <h3>⚠️ 禁止事項</h3>
+              <ul>
+                <li>差別的な発言、ハラスメント行為</li>
+                <li>営業目的の投稿、宣伝</li>
+                <li>他人を傷つける発言</li>
+                <li>個人情報の無断公開</li>
+                <li>AIによる個人情報の不適切な生成・共有</li>
+              </ul>
+
+              <h3>📱 LINEグループでのルール</h3>
+              <ul>
+                <li>差別、個人情報漏洩、広告、傷つける発言は禁止。違反は名誉毀損などで責任追及もあり得ます。</li>
+                <li>政治・宗教は控えめに。</li>
+                <li>画像・動画は許可を得て投稿。テキスト中心で配慮。</li>
+              </ul>
+
+              <h3>💻 オンライン参加のルール</h3>
+              <ul>
+                <li>録画・録音禁止</li>
+                <li>カメラ・マイクは任意（無理にオンにしなくてOK）</li>
+                <li>接続トラブルはグループLINEで連絡</li>
+              </ul>
+
+              <div class="important-rule">
+                <strong>🆘 困ったときは</strong>
+                <p>・代表にいつでも相談できます<br>
+                ・ハラスメントなどひどい場合は代表の個人LINEで相談後対応<br>
+                ・秘密は必ず守ります</p>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- タブ5: よくある質問 -->
+        <div class="tab">
+          <div class="tab-header" onclick="toggleTab(this)">
+            <span><span class="flower-icon">🌼</span> よくある質問</span>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="tab-content">
+            <div class="tab-inner">
+              <div class="rule-box">
+                <strong>Q. 匿名でも参加できますか？</strong><br>
+                A. はい。ハンドルネームでの参加も可能です。ただし、緊急時連絡のため代表には本当のお名前をお知らせいただく場合があります。
+              </div>
+
+              <div class="rule-box">
+                <strong>Q. 精神科に通っていないけど参加できますか？</strong><br>
+                A. もちろんです。「支え合おう」の精神に賛同していただける方ならどなたでも参加できます。
+              </div>
+
+              <div class="rule-box">
+                <strong>Q. 参加費はかかりますか？</strong><br>
+                A. LINEグループへの参加は無料です。対面イベント参加時は会場費を実費でいただく場合があります（1回200〜400円程度）。支払いは現金のみで、当日払えない場合は参加不可となります。
+              </div>
+
+              <div class="rule-box">
+                <strong>Q. 定例会はどのくらいの頻度でありますか？</strong><br>
+                A. 月に3回ほど開催しています（変動あり）。詳しい日程はグループLINEでお知らせします。
+              </div>
+
+              <div class="rule-box">
+                <strong>Q. 途中で退会したい場合</strong><br>
+                A. いつでも自由に退会できます。グループLINEを退出するか、代表に一言お知らせいただければスムーズです。個人情報は7日以内に削除します（法令上の保存義務を除く）。
+              </div>
+
+              <div class="rule-box">
+                <strong>Q. 障がいや配慮してほしいことがあります</strong><br>
+                A. 事前に代表までお知らせください。手話、車椅子、ゆっくりした対応など、可能な限り配慮いたします。
+              </div>
+
+              <div class="rule-box">
+                <strong>Q. ルール違反した場合どうなりますか？</strong><br>
+                A. 運営チームが注意します。重大な違反（ハラスメントなど）は除名や法的措置（警察への連絡など）をとる場合があります。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- タブ6: 利用規約（詳細版） -->
+        <div class="tab">
+          <div class="tab-header" onclick="toggleTab(this)">
+            <span><span class="flower-icon">📋</span> 利用規約（詳細）</span>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="tab-content">
+            <div class="tab-inner">
+              <div class="legal-warning">
+                <strong>⚠️ 本規約は全員の約束です</strong><br>
+                参加される方は、以下の規約に同意したものとみなします。違反は運営チームが対応します。質問は運営チームへ。
+              </div>
+
+              <h2>第1条（会の目的）</h2>
+              <p>本会は、みんなが楽しく集まり、支え合う場。悩みや喜びを共有し、心の拠り所に。障がいのある人も含め、差別なく参加OK。自分らしくいられる場を目指す。ルール違反は、場合により法的対応（警察への相談など）。目標は、参加者の自立支援と差別・孤立の解消。</p>
+
+              <h2>第2条（参加資格）</h2>
+              <p>「支え合おう」の精神に賛同する人なら誰でも参加可。</p>
+              <p><strong>未成年者：</strong></p>
+              <ul>
+                <li>中学生以下：保護者同伴（要事前連絡）。</li>
+                <li>高校生以上：親の同意書をグループLINEで事前提出。</li>
+                <li>同意書がない場合、法的責任を問う場合あり。参加はグループLINEで申請。運営チームが承認。障がいや特別ニーズ（手話、車椅子など）は事前連絡で対応。</li>
+              </ul>
+
+              <h2>第3条（運営方法）</h2>
+              <p>運営は参加者全員で。運営チーム（代表1名、運営スタッフ2名、計3名）役割：</p>
+              <ul>
+                <li>イベント・定例会の企画</li>
+                <li>参加者管理（必要時除名）</li>
+                <li>グループLINE管理</li>
+                <li>トラブル対応（重大時は法的措置、ひどいハラスメントは代表の個人LINEで相談後対処）</li>
+              </ul>
+              <p><strong>資金：</strong></p>
+              <ul>
+                <li>寄付と会費（会場費÷人数、1回200〜400円）。</li>
+                <li>支払い：現金のみ。当日払えない場合は参加不可。</li>
+                <li>収支は総会で報告。</li>
+              </ul>
+              <p><strong>会場：</strong>固定せず、グループLINEで事前通知。バリアフリー施設またはオンライン優先。</p>
+
+              <h2>第4条（活動内容）</h2>
+              <p>月3回ほどの定例会（変動あり）、交流イベント（おしゃべり会、ワークショップなど）、相談会を開催。テーマは自助、趣味、福祉情報など。参加自由。中止・変更：天災や運営都合で変更・中止時はグループLINEで通知。代替日程やオンライン開催を検討。悪口や違法行為は即停止。場合により法的対応。</p>
+
+              <h2>第5条（連絡ルール）</h2>
+              <p>連絡はグループLINEのみ。個人LINEのトラブルは自己責任。</p>
+              <p><strong>グループLINEルール：</strong></p>
+              <ul>
+                <li>差別、個人情報漏洩、広告、傷つける発言は禁止。違反は名誉毀損などで責任追及も。</li>
+                <li>政治・宗教は控えめに。画像・動画は許可を得て投稿。テキスト中心で配慮。</li>
+                <li>オンラインルール：録画・録音禁止。カメラ・マイクは任意。接続トラブルはグループLINEで連絡。</li>
+                <li>ハラスメント：禁止行為：性的発言、威圧、中傷、個人情報をAIで不適切に生成・共有する行為（例：参加者の個人情報をAIツールで加工・拡散）。ひどいハラスメントは代表の個人LINEで相談後、運営チームが対処。</li>
+                <li>違反対応：違反者は運営チームが注意。重大違反（ハラスメントなど）は除名や法的措置（警察への連絡など）。</li>
+              </ul>
+
+              <h2>第6条（責任）</h2>
+              <p>安全・健康は自己管理。活動中の事故は本会で責任を負わないが、運営ミスは責任を負う。</p>
+              <p><strong>緊急時：</strong>事故・急病などは代表（電話番号はグループLINEで通知）またはグループLINEの緊急スレッドに連絡。</p>
+              <p><strong>ハラスメント：</strong>差別やハラスメント（例：性的発言、AIによる個人情報悪用）は即除名。ひどい場合は代表の個人LINEで相談後対応。</p>
+              <p><strong>個人情報：</strong>法律に基づき厳格管理。漏洩時は法的責任。</p>
+              <p>トラブルは運営チームが仲裁。法的な問題は当事者解決、必要時法的対応。</p>
+
+              <h2>第7条（退会・除名）</h2>
+              <p>退会はグループLINE退出または運営連絡。個人情報は7日以内に削除（法令上の保存義務を除く）。ルール違反は運営判断で除名。異議は総会で申立て可。</p>
+
+              <h2>第8条（規約変更）</h2>
+              <p>規約変更は総会で半数以上賛成。変更案は事前にグループLINEで共有。</p>
+
+              <h2>附則</h2>
+              <p>本規約は全員の約束。違反は運営チームが対応。質問は運営チームへ。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- フッター -->
+      <footer>
+        <p>© 自助グループ フリージア Mayumi Kaito Saito</p>
+        <p class="footer-message">🌼 誰もが自分らしくいられる場所を目指して</p>
+      </footer>
     </div>
-</div>
+  </div>
 
-<div class="kaito">
-    Created & Optimized by Kaito Saito
-</div>
-
-<script>
-const gyms = [
-    // === 千葉市 15施設（完全収録）===
-    {city:"千葉市",name:"花島公園体育館",court:"1-2面",level:"easy",fee:"2,000円",method:"ちばシステム先着",lottery:"抽選なし",template:"施設:花島公園体育館\n日時:2026年X月X日(土)13-15時\n種目:ソフトバレーボール\n人数:10-15人"},
-    {city:"千葉市",name:"古市場公園体育館",court:"2面",level:"easy",fee:"3,000円",method:"ちばシステム先着",lottery:"抽選なし",template:"施設:古市場公園体育館\n日時:2026年X月X日(土)15-17時\n種目:ソフトバレーボール\n人数:10-15人"},
-    {city:"千葉市",name:"幕張コミュニティセンター体育館",court:"1-2面",level:"easy",fee:"1,800円",method:"当日窓口先着",lottery:"なし",template:"施設:幕張CC体育館\n日時:2026年X月X日(土)10-12時\n種目:ソフトバレーボール\n人数:10人"},
-    {city:"千葉市",name:"千葉公園体育館",court:"2面",level:"normal",fee:"4,800円",method:"ちばシステム抽選＋先着",lottery:"1ヶ月前抽選",template:"施設:千葉公園体育館\n希望日:2026年X月X日(土)\n時間:13-17時\n種目:ソフトバレーボール\n人数:10-15人"},
-    {city:"千葉市",name:"千葉ポートアリーナ（サブ）",court:"2面以上",level:"hard",fee:"9,600円",method:"ちばシステム抽選",lottery:"3ヶ月前抽選",template:"施設:千葉ポートアリーナ(サブ)\n希望日:2026年X月X日(土)\n時間:9-13時\n種目:ソフトバレーボール\n人数:10-20人"},
-    {city:"千葉市",name:"宮野木スポーツセンター体育館",court:"2面",level:"normal",fee:"4,000円",method:"ちばシステム",lottery:"一部抽選",template:"施設:宮野木SC体育館\n日時:2026年X月X日(土)9-11時\n種目:ソフトバレーボール\n人数:10人"},
-    {city:"千葉市",name:"蘇我スポーツ公園体育館",court:"2面",level:"hard",fee:"8,000円",method:"専用システム抽選",lottery:"前々月抽選",template:"施設:蘇我SP体育館\n希望日:2026年X月X日(土)\n時間:13-15時\n種目:ソフトバレーボール\n人数:10-15人"},
-    {city:"千葉市",name:"稲毛海浜公園総合体育館",court:"2面",level:"normal",fee:"5,200円",method:"ちばシステム先着",lottery:"なし",template:"施設:稲毛海浜公園総合体育館\n日時:2026年X月X日(土)17-19時\n種目:ソフトバレーボール\n人数:10人"},
-    {city:"千葉市",name:"美浜区スポーツセンター",court:"1-2面",level:"easy",fee:"2,400円",method:"窓口先着",lottery:"なし",template:"施設:美浜区SC\n日時:2026年X月X日(土)11-13時\n種目:ソフトバレーボール\n人数:10-15人"},
-    {city:"千葉市",name:"若葉区文化の森体育館",court:"2面",level:"normal",fee:"4,400円",method:"ちばシステム",lottery:"一部抽選",template:"施設:若葉区文化の森体育館\n日時:2026年X月X日(土)9-12時\n種目:ソフトバレーボール\n人数:10人"},
-    {city:"千葉市",name:"青葉の森スポーツプラザ",court:"複数面",level:"hard",fee:"7,200円",method:"ちばシステム抽選",lottery:"1ヶ月前抽選",template:"施設:青葉の森SP\n希望日:2026年X月X日(土)\n時間:10-14時\n種目:ソフトバレーボール\n人数:10-15人"},
-    {city:"千葉市",name:"中央区民体育館",court:"1-2面",level:"easy",fee:"2,200円",method:"窓口先着",lottery:"なし",template:"施設:中央区民体育館\n日時:2026年X月X日(土)16-18時\n種目:ソフトバレーボール\n人数:10人"},
-    {city:"千葉市",name:"緑区スポーツセンター",court:"2面",level:"normal",fee:"4,000円",method:"ちばシステム",lottery:"一部抽選",template:"施設:緑区SC\n日時:2026年X月X日(土)12-14時\n種目:ソフトバレーボール\n人数:10-15人"},
-    {city:"千葉市",name:"千葉県総合スポーツセンター",court:"複数面",level:"hard",fee:"12,000円〜",method:"県システム抽選",lottery:"2ヶ月前抽選",template:"施設:千葉県総合SC\n希望日:2026年X月X日(土)\n時間:13-17時\n種目:ソフトバレーボール\n人数:10-20人"},
-    {city:"千葉市",name:"JFE体育館（一般開放）",court:"2面",level:"normal",fee:"5,000円前後",method:"窓口予約",lottery:"なし",template:"施設:JFE体育館\n日時:2026年X月X日(土)14-16時\n種目:ソフトバレーボール\n人数:10人"},
-
-    // === 八千代市 10施設（完全収録）===
-    {city:"八千代市",name:"勝田台中央公園小体育館",court:"1面",level:"easy",fee:"1,600円",method:"八千代システム先着",lottery:"なし",template:"施設:勝田台中央公園小体育館\n日時:2026年X月X日(土)17-19時\n種目:ソフトバレーボール\n人数:10-15人"},
-    {city:"八千代市",name:"八千代台近隣公園小体育館",court:"1面",level:"easy",fee:"1,400円",method:"八千代システム先着",lottery:"なし",template:"施設:八千代台近隣公園小体育館\n日時:2026年X月X日(土)9-11時\n種目:ソフトバレーボール\n人数:10人"},
-    {city:"八千代市",name:"市民体育館（主体育室）",court:"2面",level:"normal",fee:"4,800円",method:"八千代システム抽選＋先着",lottery:"3ヶ月前抽選",template:"施設:市民体育館\n希望日:2026年X月X日(土)\n時間:13-17時\n種目:ソフトバレーボール\n人数:10-15人"},
-    {city:"八千代市",name:"総合運動公園体育館",court:"2面",level:"hard",fee:"7,200円",method:"八千代システム抽選",lottery:"3ヶ月前抽選",template:"施設:総合運動公園体育館\n希望日:2026年X月X日(土)\n時間:9-13時\n種目:ソフトバレーボール\n人数:10-20人"},
-    {city:"八千代市",name:"勝田台地区体育館",court:"1-2面",level:"easy",fee:"2,800円",method:"八千代システム先着",lottery:"なし",template:"施設:勝田台地区体育館\n日時:2026年X月X日(土)14-16時\n種目:ソフトバレーボール\n人数:10人"},
-    {city:"八千代市",name:"萱田地区公園体育館",court:"1-2面",level:"normal",fee:"3,200円",method:"八千代システム",lottery:"一部抽選",template:"施設:萱田地区公園体育館\n日時:2026年X月X日(土)15-17時\n種目:ソフトバレーボール\n人数:10-15人"},
-    {city:"八千代市",name:"村上第1公園体育館",court:"1面",level:"easy",fee:"1,500円",method:"先着予約",lottery:"なし",template:"施設:村上第1公園体育館\n日時:2026年X月X日(土)9-11時\n種目:ソフトバレーボール\n人数:10人"},
-    {city:"八千代市",name:"東南公共センター体育館",court:"1-2面",level:"normal",fee:"3,600円",method:"八千代システム",lottery:"軽い抽選",template:"施設:東南公共センター体育館\n希望日:2026年X月X日(土)\n時間:13-15時\n種目:ソフトバレーボール\n人数:10人"},
-    {city:"八千代市",name:"旧阿蘇小学校体育館",court:"1-2面",level:"easy",fee:"2,000円",method:"教育委員会申込",lottery:"なし",template:"施設:旧阿蘇小学校体育館\n日時:2026年X月X日(土)10-12時\n種目:ソフトバレーボール\n人数:10-15人"},
-    {city:"八千代市",name:"セントラルスポーツ生涯学習プラザ体育室",court:"1面",level:"normal",fee:"2,800円",method:"プラザサイト予約",lottery:"なし",template:"施設:セントラルスポーツプラザ\n日時:2026年X月X日(土)16-18時\n種目:ソフトバレーボール\n人数:10人"}
-];
-
-function search() {
-    const city = document.getElementById('city').value;
-    const level = document.getElementById('level').value;
-    const levelText = document.getElementById('level').options[document.getElementById('level').selectedIndex].text;
-    document.getElementById('summary').textContent = city + " ・ " + levelText;
-
-    const tbody = document.querySelector('#table tbody');
-    tbody.innerHTML = '';
-
-    gyms.filter(g => (city === 'all' || g.city === city) && (level === 'all' || g.level === level))
-        .sort((a,b) => a.level.localeCompare(b.level))
-        .forEach(g => {
-            const color = g.level === 'easy' ? '#4caf50' : g.level === 'normal' ? '#ff9800' : '#f44336';
-            const label = g.level === 'easy' ? '入りやすい' : g.level === 'normal' ? '普通' : '激戦';
-            tbody.innerHTML += `
-                <tr>
-                    <td><span class="level" style="background:${color}">${label}</span></td>
-                    <td>${g.city}</td>
-                    <td><strong>${g.name}</strong></td>
-                    <td>${g.court}</td>
-                    <td class="fee">${g.fee}</td>
-                    <td>${g.method}</td>
-                    <td>${g.lottery}</td>
-                    <td><div class="template">${g.template}</div></td>
-                </tr>`;
-        });
-
-    document.getElementById('result').style.display = 'block';
-    document.getElementById('result').scrollIntoView({behavior:"smooth"});
-}
-</script>
+  <!-- JavaScript: タブの開閉機能 -->
+  <script>
+    // タブの開閉機能
+    function toggleTab(header) {
+      const content = header.nextElementSibling;
+      const icon = header.querySelector('.toggle-icon');
+      
+      if (content.classList.contains('open')) {
+        content.classList.remove('open');
+        icon.textContent = '▼';
+      } else {
+        content.classList.add('open');
+        icon.textContent = '▲';
+      }
+    }
+  </script>
 </body>
 </html>
