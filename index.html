@@ -2,1964 +2,489 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="ozKChrwYqsm9qCT3xc_rgDiR2n6mNEYIPU0ClVJObZg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>チームマーメイド｜千葉県 千葉市・八千代市・勝田台のインクルーシブソフトバレーボールチーム</title>
-    <meta name="description" content="千葉県八千代市勝田台で活動するソフトバレーボールチームマーメイド。障がい者と健常者が一緒に楽しむインクルーシブな練習会を毎月開催。見学・参加随時受付中！">
-    <meta name="keywords" content="チームマーメイド,ソフトバレーボール,千葉県,八千代市,勝田台,障がい者スポーツ,インクルーシブ">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <title>Kaito Saito | CADパースデザインポートフォリオ — Design Creates The Future</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* === 基本設定（元のスタイルをそのまま使用）=== */
-        :root {
-            --primary-color: #0284c7;
-            --secondary-color: #1e40af;
-            --text-color: #1e3a8a;
-            --bg-light: #f0f9ff;
-            --bg-card: #ffffff;
-            --border-color: #bfdbfe;
-            --shadow: 0 6px 20px rgba(0,0,0,0.15);
-            --nav-bg: rgba(255,255,255,0.95);
-            --footer-text: #fff;
-            --important-bg: #ffebee;
-            --important-border: #d32f2f;
-            --success-bg: #4caf50;
-            --warning-bg: #fff3cd;
-            --warning-border: #ffc107;
-            --input-bg: #ffffff;
-            --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
-            --font-size-base: clamp(1rem,1.2vw,1.2rem);
-            --font-size-mobile: clamp(1.2rem,3.5vw,1.5rem);
-            --border-radius: clamp(0.5rem,1vw,1rem);
-        }
-        *{box-sizing:border-box;margin:0;padding:0}
-        body{
-            font-family:'Poppins',sans-serif;
-            background:linear-gradient(135deg,var(--bg-light),var(--bg-light));
-            color:var(--text-color);
-            line-height:1.6;
-            overflow-x:hidden;
-            -webkit-tap-highlight-color:transparent;
-            -webkit-overflow-scrolling:touch;
-        }
-        header{
-            position:relative;
-            text-align:center;
-            padding:12vw 5vw;
-            background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
-            box-shadow:var(--shadow);
-            overflow:hidden;
-        }
-        header::before{
-            content:'';
-            position:absolute;
-            inset:0;
-            background:linear-gradient(135deg,rgba(14,165,233,.6),rgba(56,189,248,.4));
-            z-index:1;
-            animation:glowPulse 5s ease infinite;
-        }
-        @keyframes glowPulse {
-            0%{opacity:0.3}
-            50%{opacity:0.7}
-            100%{opacity:0.3}
-        }
-        .header-content{
-            position:relative;
-            z-index:2;
-            animation:float 4s ease infinite;
-        }
-        @keyframes float {
-            0%{transform:translateY(0px)}
-            50%{transform:translateY(-10px)}
-            100%{transform:translateY(0px)}
-        }
-        h1{
-            font-size:clamp(2rem,6vw,3rem);
-            color:#fff;
-            text-shadow:0 0 20px rgba(255,255,255,0.5);
-            animation:pulse 3s infinite;
-        }
-        @keyframes pulse{
-            0%,100%{text-shadow:0 0 20px rgba(255,255,255,0.5)}
-            50%{text-shadow:0 0 40px rgba(255,255,255,0.8)}
-        }
-        nav{
-            background:var(--nav-bg);
-            padding:1.5vw;
-            position:sticky;
-            top:0;
-            z-index:1000;
-            box-shadow:var(--shadow);
-            backdrop-filter:blur(10px);
-        }
-        nav ul{
-            list-style:none;
-            display:flex;
-            justify-content:center;
-            gap:3vw;
-            flex-wrap:wrap;
-        }
-        nav a{
-            color:var(--text-color);
-            text-decoration:none;
-            font-weight:600;
-            font-size:var(--font-size-base);
-            padding:1vw;
-            position:relative;
-            transition:var(--transition);
-            cursor:pointer;
-            display:inline-block;
-            min-height:44px;
-            line-height:44px;
-        }
-        nav a::after{
-            content:'';
-            position:absolute;
-            bottom:-.2vw;
-            left:0;
-            width:0;
-            height:.2vw;
-            background:var(--primary-color);
-            transition:var(--transition);
-        }
-        nav a:hover::after{width:100%}
-        nav a:hover{color:var(--primary-color)}
-        .nav-toggle{
-            display:none;
-            font-size:2rem;
-            background:none;
-            border:none;
-            color:var(--text-color);
-            cursor:pointer;
-            position:absolute;
-            top:1vw;
-            right:2vw;
-            z-index:1001;
-            min-width:44px;
-            min-height:44px;
-            touch-action:manipulation
-        }
-        .nav-toggle:hover{transform:rotate(90deg)}
-        main{max-width:90vw;margin:5vw auto;padding:0 2vw}
-        section{
-            background:var(--bg-card);
-            padding:4vw;
-            margin-bottom:4vw;
-            border-radius:var(--border-radius);
-            box-shadow:var(--shadow);
-            position:relative;
-            opacity:0;
-            animation:slideUp .7s ease-out forwards;
-        }
-        @keyframes slideUp{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
-        section.visible{opacity:1}
-        h2{
-            font-size:clamp(1.5rem,4.5vw,2.5rem);
-            color:var(--primary-color);
-            margin:0 0 2vw;
-            position:relative;
-        }
-        h2::after{
-            content:'';
-            position:absolute;
-            bottom:-.5vw;
-            left:0;
-            width:5vw;
-            height:.3vw;
-            background:linear-gradient(to right,var(--primary-color),var(--secondary-color));
-            transition:var(--transition)
-        }
-        .event-item{margin-bottom:4vw}
-        .event-item h3{
-            font-size:clamp(1.6rem,4vw,2rem);
-            color:var(--primary-color);
-            margin-bottom:1vw
-        }
-        .event-item p{margin-bottom:1vw}
-        .event-item img{
-            width:clamp(20vw,30vw,30rem);
-            height:auto;
-            border-radius:var(--border-radius);
-            cursor:pointer;
-            transition:var(--transition);
-            display:block;
-            margin:2vw auto;
-            border:.2vw solid var(--primary-color)
-        }
-        .event-item img:hover{
-            transform:perspective(500px) rotateX(5deg) scale(1.05);
-            box-shadow:0 0 15px rgba(14,165,233,.5)
-        }
-        .event-item.past h3,.event-item.past p{color:#999!important}
-        .event-item.past img{opacity:.6;filter:grayscale(80%);cursor:not-allowed;pointer-events:none}
-        .archive-toggle{
-            background:var(--bg-light);
-            padding:1.5rem;
-            border-radius:1rem;
-            text-align:center;
-            cursor:pointer;
-            margin:3rem 0;
-            font-weight:600;
-            color:var(--primary-color);
-            border:2px dashed var(--primary-color);
-            font-size:var(--font-size-base);
-            min-height:44px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            touch-action:manipulation
-        }
-        .archive-toggle:hover{background:var(--bg-card)}
-        .archive-toggle:active{background:var(--border-color)}
-        #archive-container{display:none;margin-top:2rem}
-        #archive-container.show{display:block;animation:slideUp .5s}
-        .gallery{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(20vw,1fr));
-            gap:2vw;
-            margin-top:2vw;
-        }
-        .gallery-item{
-            position:relative;
-            overflow:hidden;
-            border-radius:var(--border-radius);
-            border:.2vw solid var(--primary-color);
-            opacity:0;
-            transform:translateY(20px);
-            transition:opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s;
-            cursor:pointer;
-            aspect-ratio:1/1;
-        }
-        .gallery-item.visible{
-            opacity:1;
-            transform:translateY(0);
-        }
-        .gallery-item:hover{
-            transform:scale(1.03) translateY(-5px);
-            box-shadow:0 15px 30px rgba(0,0,0,0.3);
-            z-index:5;
-        }
-        .gallery-item img{
-            width:100%;
-            height:100%;
-            object-fit:cover;
-            transition:transform 0.5s;
-            display:block;
-        }
-        .gallery-item:hover img{
-            transform:scale(1.1);
-        }
-        .gallery-caption{
-            position:absolute;
-            bottom:0;
-            left:0;
-            right:0;
-            background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-            color:white;
-            padding:1rem;
-            transform:translateY(100%);
-            transition:transform 0.3s;
-            font-size:0.9rem;
-            text-align:center;
-            backdrop-filter:blur(5px);
-        }
-        .gallery-item:hover .gallery-caption{
-            transform:translateY(0);
-        }
-        .lightbox{
-            position:fixed;
-            top:0;
-            left:0;
-            width:100%;
-            height:100%;
-            background:rgba(0,0,0,0.9);
-            display:none;
-            align-items:center;
-            justify-content:center;
-            z-index:3000;
-            backdrop-filter:blur(10px);
-        }
-        .lightbox.active{display:flex}
-        .lightbox-content{
-            position:relative;
-            max-width:90vw;
-            max-height:80vh;
-        }
-        .lightbox img{
-            max-width:100%;
-            max-height:80vh;
-            border-radius:var(--border-radius);
-            box-shadow:0 0 30px rgba(0,0,0,0.5);
-            animation:lightboxFadeIn 0.3s;
-        }
-        @keyframes lightboxFadeIn{
-            from{opacity:0;transform:scale(0.9)}
-            to{opacity:1;transform:scale(1)}
-        }
-        .lightbox-close{
-            position:absolute;
-            top:2vw;
-            right:2vw;
-            font-size:clamp(2rem,6vw,3rem);
-            color:#fff;
-            background:rgba(30,64,175,.8);
-            border-radius:50%;
-            padding:1.5vw;
-            cursor:pointer;
-            z-index:3001;
-            min-width:44px;
-            min-height:44px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            touch-action:manipulation;
-            transition:var(--transition);
-        }
-        .lightbox-close:hover{
-            color:var(--primary-color);
-            transform:scale(1.1) rotate(180deg);
-        }
-        .lightbox-close:active{transform:scale(0.95) rotate(180deg)}
-        .lightbox-prev, .lightbox-next{
-            position:absolute;
-            top:50%;
-            transform:translateY(-50%);
-            background:rgba(0,0,0,0.5);
-            color:white;
-            border:none;
-            font-size:3rem;
-            width:60px;
-            height:60px;
-            border-radius:50%;
-            cursor:pointer;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            transition:var(--transition);
-            z-index:3001;
-            touch-action:manipulation;
-        }
-        .lightbox-prev{left:2vw}
-        .lightbox-next{right:2vw}
-        .lightbox-prev:hover, .lightbox-next:hover{
-            background:rgba(0,0,0,0.8);
-            transform:translateY(-50%) scale(1.1);
-        }
-        .lightbox-prev:active, .lightbox-next:active{transform:translateY(-50%) scale(0.95)}
-        .lightbox-counter{
-            position:absolute;
-            bottom:2vw;
-            left:50%;
-            transform:translateX(-50%);
-            background:rgba(0,0,0,0.5);
-            color:white;
-            padding:0.5rem 1rem;
-            border-radius:20px;
-            font-size:0.9rem;
-            backdrop-filter:blur(5px);
-        }
-        .contact-form,.event-form{display:flex;flex-direction:column;gap:1.5vw}
-        .contact-form input,.contact-form textarea,.event-form input,.event-form select{
-            width:100%;
-            padding:1rem;
-            border:.2vw solid var(--border-color);
-            border-radius:12px;
-            font-size:1rem;
-            transition:var(--transition);
-            background:var(--input-bg);
-            color:var(--text-color);
-            min-height:44px;
-        }
-        .contact-form input:focus,.contact-form textarea:focus,.event-form input:focus,.event-form select:focus{
-            border-color:var(--primary-color);
-            box-shadow:0 0 0 3px rgba(2,132,199,0.1);
-            outline:none
-        }
-        .contact-form textarea{min-height:100px;resize:vertical}
-        .contact-form button,.event-form button,.status-btn{
-            padding:1.2vw 4vw;
-            border:none;
-            border-radius:var(--border-radius);
-            background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));
-            color:#fff;
-            font-weight:600;
-            cursor:pointer;
-            font-size:var(--font-size-base);
-            transition:var(--transition);
-            min-height:44px;
-            display:inline-flex;
-            align-items:center;
-            justify-content:center;
-            touch-action:manipulation
-        }
-        .contact-form button:hover,.event-form button:hover,.status-btn:hover{transform:scale(1.05) translateY(-2px)}
-        .contact-form button:active,.event-form button:active,.status-btn:active{transform:scale(0.98)}
-        .terms{background:var(--bg-light);color:var(--text-color)}
-        .terms h2,.terms h3{color:var(--primary-color)}
-        footer{
-            text-align:center;
-            padding:2.5vw;
-            background:linear-gradient(135deg,var(--secondary-color),var(--primary-color));
-            color:var(--footer-text);
-            font-size:clamp(.8rem,.95vw,1rem);
-            position:relative;
-        }
-        footer::before{
-            content:'';
-            position:absolute;
-            top:0;
-            left:0;
-            width:100%;
-            height:100%;
-            background:linear-gradient(45deg,rgba(255,255,255,.1),transparent);
-            z-index:0;
-        }
-        footer p{position:relative;z-index:1}
-        .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:2000;backdrop-filter:blur(5px)}
-        .modal-content{background:var(--bg-card);margin:10% auto;padding:2vw;width:80%;max-width:clamp(20rem,30vw,30rem);border-radius:var(--border-radius);box-shadow:var(--shadow);text-align:center;color:var(--text-color)}
-        .modal-close{
-            position:absolute;
-            top:2vw;
-            right:2vw;
-            font-size:clamp(1.5rem,3vw,2rem);
-            color:var(--secondary-color);
-            background:rgba(255,255,255,.9);
-            border-radius:50%;
-            padding:1vw;
-            cursor:pointer;
-            z-index:2001;
-            min-width:44px;
-            min-height:44px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            touch-action:manipulation
-        }
-        .modal-close:hover{color:var(--primary-color);transform:scale(1.1) rotate(180deg)}
-        .modal-close:active{transform:scale(0.95) rotate(180deg)}
-        .status-btn{margin:0.5rem;min-width:100px}
-        @media(max-width:768px){
-            .nav-toggle{display:block}
-            nav ul{display:none;flex-direction:column;align-items:center;background:var(--nav-bg);position:absolute;top:4vw;left:0;width:100%;padding:2vw 0;box-shadow:var(--shadow)}
-            nav ul.active{display:flex}
-            nav a{font-size:var(--font-size-mobile);padding:2vw}
-            .gallery{grid-template-columns:1fr 1fr}
-        }
-        @media(max-width:480px){
-            .gallery{grid-template-columns:1fr}
-        }
-        .agreement-header {
-            background: linear-gradient(135deg, #007aff 0%, #5856d6 50%, #af52de 100%);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 2rem;
-        }
-        .agreement-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
-        }
-        .agreement-notice {
-            background: linear-gradient(135deg, #34c759, #30d158);
-            color: white;
-            padding: 1.5rem;
-            text-align: center;
-            border-radius: 12px;
-            margin: 1rem 0 2rem;
-            box-shadow: 0 8px 24px rgba(52,199,89,0.3);
-        }
-        .doc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        .doc-card {
-            background: white;
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-        .doc-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-        }
-        .doc-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #007aff, #5856d6, #af52de);
-        }
-        .doc-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #007aff, #5856d6);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            color: white;
-        }
-        .doc-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-color);
-        }
-        .doc-card p {
-            color: #666;
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-        }
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-        }
-        .doc-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.5rem;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition);
-            flex: 1;
-            -webkit-tap-highlight-color: transparent;
-            touch-action: manipulation;
-            min-height: 48px;
-        }
-        .doc-btn.view {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-        }
-        .doc-btn.pdf {
-            background: linear-gradient(135deg, #ff3b30, #d70015);
-            color: white;
-        }
-        .doc-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        .doc-btn:active {
-            transform: scale(0.98);
-        }
-        .agreement-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 3000;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            backdrop-filter: blur(10px);
-        }
-        .agreement-modal.active {
-            display: flex;
-        }
-        .agreement-modal-content {
-            background: white;
-            border-radius: 20px;
-            width: 100%;
-            max-width: 800px;
-            max-height: 90vh;
-            overflow: hidden;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-        }
-        .agreement-modal-header {
-            padding: 1.5rem 2rem;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #f8f9fa;
-        }
-        .agreement-modal-header h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-color);
-        }
-        .agreement-close-btn {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #666;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 50%;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            -webkit-tap-highlight-color: transparent;
-            touch-action: manipulation;
-        }
-        .agreement-close-btn:hover {
-            background: rgba(0,0,0,0.05);
-        }
-        .agreement-close-btn:active {
-            background: rgba(0,0,0,0.1);
-            transform: scale(0.95);
-        }
-        .agreement-modal-body {
-            padding: 2rem;
-            overflow-y: auto;
-            max-height: calc(90vh - 80px);
-            -webkit-overflow-scrolling: touch;
-        }
-        .agreement-modal-body h4 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin: 1.5rem 0 0.8rem;
-            color: var(--text-color);
-            padding-left: 0.5rem;
-            border-left: 4px solid var(--primary-color);
-        }
-        .agreement-modal-body p {
-            margin-bottom: 1rem;
-            color: #666;
-            line-height: 1.7;
-        }
-        .agreement-modal-body ul {
-            margin-left: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .agreement-modal-body li {
-            margin-bottom: 0.5rem;
-            color: #666;
-        }
-        .back-to-home {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            background: rgba(0,122,255,0.1);
-            color: var(--primary-color);
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
-            margin: 2rem 0;
-            transition: var(--transition);
-            -webkit-tap-highlight-color: transparent;
-            min-height: 48px;
-            touch-action: manipulation;
-        }
-        .back-to-home:hover {
-            background: rgba(0,122,255,0.2);
-            gap: 1rem;
-        }
-        .back-to-home:active {
-            transform: scale(0.98);
-        }
-        .pdf-container {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: white;
-            z-index: 4000;
-            overflow: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        .pdf-container.active {
-            display: block;
-        }
-        .pdf-toolbar {
-            position: sticky;
-            top: 0;
-            background: #007aff;
-            color: white;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 4001;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .pdf-toolbar h3 {
+        * {
             margin: 0;
-            font-size: 1.2rem;
-            font-weight: 500;
-        }
-        .pdf-actions {
-            display: flex;
-            gap: 0.5rem;
-        }
-        .pdf-action-btn {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 0.75rem 1rem;
-            font-size: 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            transition: var(--transition);
+            padding: 0;
+            box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
-            touch-action: manipulation;
-            min-height: 48px;
-            min-width: 48px;
         }
-        .pdf-action-btn:hover {
-            background: rgba(255,255,255,0.3);
-        }
-        .pdf-action-btn:active {
-            transform: scale(0.95);
-            background: rgba(255,255,255,0.4);
-        }
-        .pdf-action-btn.download {
-            background: linear-gradient(135deg, #34c759, #30d158);
-        }
-        .pdf-action-btn.print {
-            background: linear-gradient(135deg, #007aff, #5856d6);
-        }
-        .pdf-action-btn.close-pdf {
-            background: linear-gradient(135deg, #ff3b30, #d70015);
-        }
-        .mobile-pdf-actions {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            padding: 1rem;
-            box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
-            z-index: 4002;
-            justify-content: center;
-            gap: 1rem;
-            border-top: 1px solid #e5e7eb;
-        }
-        .mobile-pdf-actions.active {
-            display: flex;
-        }
-        .mobile-pdf-actions .pdf-action-btn {
-            flex: 1;
-            justify-content: center;
-            font-size: 1rem;
-            font-weight: 600;
-            color: white;
-            border: none;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            min-height: 52px;
-        }
-        .pdf-content {
-            padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.7;
-            color: #374151;
-            padding-bottom: 80px;
-        }
-        .pdf-download-link {
-            display: none;
-        }
-        .important-rule {
-            border-left: 4px solid #d32f2f;
-            background: #ffebee;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .important-rule p {
-            color: #b71c1c;
-            font-weight: 500;
-        }
-        .required-mark {
-            color: #d32f2f;
-            margin-left: 0.3rem;
-            font-size: 0.9rem;
-        }
-        .notice-box {
-            background: #f0f9ff;
-            border-left: 4px solid var(--primary-color);
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 8px;
-        }
-        .notice-box p {
-            margin: 0.3rem 0;
-        }
-        .participation-form {
-            background: linear-gradient(135deg, #ffffff, #f5f5f5);
-            border: 2px solid var(--primary-color);
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: var(--shadow);
-        }
-        .participation-form h3 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-color);
-        }
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #bfdbfe;
-            border-radius: 12px;
-            font-size: 1rem;
-            transition: var(--transition);
-            background: white;
-            min-height: 44px;
-        }
-        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
-            outline: none;
-        }
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-        .simple-send-box {
-            background: #e8f5e9;
-            border: 2px solid #4caf50;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            text-align: center;
-        }
-        .simple-send-btn {
-            background: #4caf50;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 1rem 2rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            transition: var(--transition);
-            margin: 0.5rem 0;
-            min-height: 56px;
-            touch-action: manipulation;
-        }
-        .simple-send-btn:hover {
-            background: #45a049;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
-        }
-        .simple-send-btn:active {
-            transform: scale(0.98);
-            background: #3d8b40;
-        }
-        .simple-note {
-            color: #666;
-            font-size: 0.9rem;
-            margin: 0.5rem 0;
-        }
-        .success-message {
-            background: #4caf50;
-            color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-            text-align: center;
-            display: none;
-        }
-        .success-message.show {
-            display: block;
-            animation: fadeIn 0.5s;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .agreement-checkbox {
-            background: #f9f9f9;
-            padding: 1.2rem;
-            border-radius: 12px;
-            margin: 1.5rem 0;
-            border: 1px solid #ccc;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.8rem;
-        }
-        .agreement-checkbox input[type="checkbox"] {
-            width: 22px;
-            height: 22px;
-            margin-top: 0.2rem;
-            flex-shrink: 0;
-            accent-color: var(--primary-color);
-        }
-        .agreement-checkbox label {
-            font-size: 0.95rem;
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: radial-gradient(circle at 10% 20%, #0a1128, #030617);
+            color: #eef4ff;
             line-height: 1.5;
-            color: #333;
+            scroll-behavior: smooth;
         }
-        .agreement-checkbox label strong {
-            color: var(--primary-color);
+
+        :root {
+            --glow-blue: #2f6ea2;
+            --border-dim: rgba(56, 110, 160, 0.35);
+            --card-bg: rgba(8, 20, 40, 0.75);
         }
-        .required-check {
-            color: #d32f2f;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-left: 0.5rem;
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
-        .error-message {
-            color: #d32f2f;
-            font-size: 0.9rem;
-            margin: 0.5rem 0 1rem;
-            padding: 0.5rem;
-            background: #ffebee;
-            border-radius: 6px;
-            border-left: 4px solid #d32f2f;
-            display: none;
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 28px 0 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-bottom: 1px solid var(--border-dim);
         }
-        .manual-email-area {
-            background: #fff3e0;
-            border: 2px solid #ff9800;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            display: none;
-        }
-        .manual-email-area.show {
-            display: block;
-        }
-        .manual-email-area textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #ff9800;
-            border-radius: 8px;
-            font-family: monospace;
-            font-size: 0.9rem;
-            margin: 1rem 0;
-            resize: vertical;
-        }
-        .copy-btn {
-            background: #ff9800;
+        .logo a {
+            font-size: 1.7rem;
+            font-weight: 700;
+            text-decoration: none;
             color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 0.8rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            touch-action: manipulation;
         }
-        .copy-btn:hover {
-            background: #f57c00;
+        .logo span {
+            font-weight: 500;
+            color: var(--glow-blue);
         }
-        .copy-btn:active {
-            transform: scale(0.98);
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
         }
-        .contact-note {
-            font-size: 0.85rem;
-            color: #666;
-            margin-top: 0.5rem;
-            text-align: center;
-            border-top: 1px dashed #ccc;
-            padding-top: 0.8rem;
-        }
-        .contact-note a {
-            color: var(--primary-color);
+        .nav-links a {
             text-decoration: none;
             font-weight: 500;
+            color: #cde2fc;
+            font-size: 0.95rem;
+            transition: 0.2s;
         }
-        .contact-note a:hover {
-            text-decoration: underline;
+        .nav-links a:hover {
+            color: white;
+            text-shadow: 0 0 5px #3d8bcd;
         }
-        .qr-code {
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 48px;
+            padding: 56px 0 80px;
+        }
+        .hero-left {
+            flex: 1.2;
+        }
+        .hero-tagline {
+            font-size: clamp(2.5rem, 7vw, 4.2rem);
+            font-weight: 800;
+            line-height: 1.08;
+            margin-bottom: 24px;
+            background: linear-gradient(130deg, #FFFFFF, #95c6ff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .hero-name {
+            font-size: clamp(1.2rem, 5vw, 1.9rem);
+            font-weight: 600;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--glow-blue);
+            padding-left: 20px;
+        }
+        .hero-name small {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #b8d4ff;
+        }
+        .hero-desc {
+            font-size: 1rem;
+            color: #cae0fc;
+            max-width: 520px;
+            margin-bottom: 32px;
+        }
+        .skill-badge {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .skill-badge span {
+            background: rgba(29, 74, 124, 0.45);
+            backdrop-filter: blur(4px);
+            border: 1px solid var(--border-dim);
+            padding: 5px 18px;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        .hero-right {
+            flex: 0.85;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border-radius: 32px;
+            padding: 28px 24px;
+            border: 1px solid rgba(72, 130, 180, 0.45);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.4);
+        }
+        .contact-card p {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #c7e2ff;
+        }
+        .contact-card .mail, .contact-card .tel {
+            font-family: monospace;
+            font-size: 0.85rem;
+            margin: 10px 0;
+            background: #04142c;
+            padding: 7px 12px;
+            border-radius: 20px;
+            word-break: break-all;
+        }
+        .quote {
+            margin-top: 24px;
+            border-top: 1px solid var(--border-dim);
+            padding-top: 16px;
+            font-style: italic;
+            color: #bcd3fb;
+        }
+
+        /* PORTFOLIO AREA */
+        .portfolio-section {
+            padding: 60px 0;
+            border-top: 1px solid var(--border-dim);
+        }
+        .section-title {
+            font-size: clamp(2rem, 6vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #fff, #7fb4e0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .portfolio-button {
             text-align: center;
-            margin-top: 2rem;
+            cursor: pointer;
+            max-width: 560px;
+            margin: 0 auto 32px;
         }
-        .qr-code img {
-            max-width: 150px;
-            height: auto;
+        .portfolio-button img {
+            width: 100%;
+            border-radius: 32px;
+            box-shadow: 0 16px 30px -8px rgba(0,0,0,0.6);
+            border: 1px solid var(--border-dim);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: block;
+            margin: 0 auto;
+            background: #11223a;
         }
-        .reply-required-note {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 0.8rem 1rem;
-            margin: 1rem 0;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            color: #856404;
+        .portfolio-button:hover img {
+            transform: scale(1.01);
+            box-shadow: 0 24px 38px -12px rgba(47, 110, 162, 0.4);
+            border-color: var(--glow-blue);
         }
-        .reply-required-note strong {
-            color: #d32f2f;
+        .btn-caption {
+            margin-top: 16px;
+            font-weight: 500;
+            color: #bbd6ff;
         }
-        .important-note {
-            background: #ffebee;
-            border-left: 4px solid #d32f2f;
-            padding: 0.8rem 1rem;
-            margin: 1rem 0;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            color: #b71c1c;
+
+        .achievements-list {
+            background: rgba(6, 18, 32, 0.7);
+            backdrop-filter: blur(8px);
+            border-radius: 40px;
+            padding: 32px 28px;
+            margin-top: 24px;
+            border: 1px solid var(--border-dim);
+            display: none;
+        }
+        .achievements-list.show {
+            display: block;
+        }
+        .achievements-list h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border-left: 3px solid var(--glow-blue);
+            padding-left: 18px;
+        }
+        .achievement-item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0 14px 18px;
+            border-bottom: 1px solid rgba(80, 130, 180, 0.3);
+            color: #e2efff;
+            font-weight: 500;
+        }
+        .achievement-item i {
+            margin-right: 14px;
+            color: var(--glow-blue);
+            width: 24px;
+        }
+        .portfolio-link {
+            background: rgba(47, 110, 162, 0.2);
+            padding: 4px 16px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            text-decoration: none;
+            color: var(--glow-blue);
+            transition: 0.2s;
+            white-space: nowrap;
+        }
+        .portfolio-link:hover {
+            background: var(--glow-blue);
+            color: white;
+        }
+        .note-text {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #9bbce5;
+            text-align: center;
+        }
+
+        /* CONTACT FORM */
+        .contact-form-section {
+            padding: 70px 0;
+            border-top: 1px solid var(--border-dim);
+            background: rgba(3, 10, 28, 0.5);
+        }
+        .form-container {
+            max-width: 680px;
+            margin: 0 auto;
+            background: rgba(8, 24, 46, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 40px;
+            padding: 40px 36px;
+            border: 1px solid rgba(64, 118, 168, 0.5);
+        }
+        .form-container h2 {
+            font-size: 1.9rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .form-container p {
+            margin-bottom: 28px;
+            color: #bfd9fc;
+        }
+        .input-group {
+            margin-bottom: 26px;
+        }
+        .input-group input, .input-group textarea {
+            width: 100%;
+            background: rgba(1, 12, 28, 0.8);
+            border: 1px solid var(--border-dim);
+            padding: 15px 22px;
+            border-radius: 36px;
+            font-size: 1rem;
+            color: white;
+            font-family: inherit;
+        }
+        .input-group input:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: var(--glow-blue);
+            box-shadow: 0 0 0 3px rgba(47, 110, 162, 0.3);
+        }
+        .input-group textarea {
+            min-height: 120px;
+            resize: vertical;
+            border-radius: 28px;
+        }
+        .btn-submit {
+            background: var(--glow-blue);
+            border: none;
+            padding: 14px 24px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0a1428;
+            border-radius: 60px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn-submit:hover {
+            background: #4183bb;
+            transform: scale(0.98);
+        }
+        footer {
+            text-align: center;
+            padding: 40px 0 48px;
+            font-size: 0.8rem;
+            color: #86aed4;
+            border-top: 1px solid rgba(64, 110, 148, 0.3);
+        }
+
+        @media (max-width: 750px) {
+            .container { padding: 0 20px; }
+            .hero { gap: 32px; padding: 40px 0 60px; }
+            .achievement-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+            .portfolio-link { white-space: normal; margin-left: 28px; }
+        }
+        @media (max-width: 550px) {
+            .navbar { flex-direction: column; align-items: flex-start; }
+            .portfolio-button img { max-width: 100%; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <h1>チームマーメイド<br>Soft Volleyball Mermaid</h1>
-        </div>
-    </header>
 
-    <nav>
-        <button class="nav-toggle" aria-label="メニューを開く" onclick="toggleNav()">☰</button>
-        <ul id="nav-menu">
-            <li><a href="#" onclick="showHome(); return false;">ホーム</a></li>
-            <li><a href="#gallery" onclick="showSection('gallery'); return false;">ギャラリー</a></li>
-            <li><a href="#events" onclick="showSection('events'); return false;">イベント</a></li>
-            <li><a href="#contact" onclick="showSection('contact'); return false;">連絡先</a></li>
-            <li><a href="#" onclick="showAgreementPage(); return false;">規約と同意書</a></li>
+<div class="container">
+    <nav class="navbar">
+        <div class="logo"><a href="#">Kaito<span>Saito</span></a></div>
+        <ul class="nav-links">
+            <li><a href="#portfolioBtnSection">PORTFOLIO</a></li>
+            <li><a href="#contactFormSection">CONTACT</a></li>
         </ul>
     </nav>
 
-    <main id="main-content">
-        <section id="home" style="display: block;">
-            <div style="background:var(--bg-card);padding:3rem 4vw;margin:2rem auto 4rem;border-radius:1rem;box-shadow:var(--shadow);text-align:center;">
-                <p style="font-size:1.3rem;line-height:1.9;color:var(--text-color);font-weight:600;">
-                    障がい者と健常者がソフトバレーを通じて心身を健康にし、<br class="sp-only">
-                    相互理解と地域貢献を目指します。<br>
-                    障がい者スポーツの普及を推進することを目的としたチームです！
-                </p>
+    <!-- ヒーロー/名刺 -->
+    <div class="hero">
+        <div class="hero-left">
+            <div class="hero-tagline">Design<br>Creates<br>The Future.</div>
+            <div class="hero-name">齊藤 快途 <small>Kaito Saito</small></div>
+            <div class="hero-desc">CADから生み出す確かなパース / デザインで価値を創造。<br>某大手プロジェクト、入札用パンフレットからチラシまで。<br>機能性と美を融合したビジュアルを提供します。</div>
+            <div class="skill-badge">
+                <span>CAD / 3Dパース</span><span>3ds Max / V-Ray</span><span>Adobe Creative Cloud</span><span>AI × Web Design</span><span>パースデザイン</span>
             </div>
-
-            <div class="participation-form">
-                <h3>📝 参加申込フォーム</h3>
-                <div class="reply-required-note">
-                    <strong>⚠️ 重要：参加登録の完了について</strong><br>
-                    フォーム送信後、自動返信メールが届きます。その返信メールに対して、<strong>「参加同意」の旨を必ずご返信ください。</strong><br>
-                    返信がない場合、参加同意とみなされず、登録は完了しません。必ず返信をお願いいたします。
-                </div>
-                <div class="success-message" id="successMessage">
-                    ✅ 送信準備が完了しました。メールアプリで送信してください。<br>
-                    <strong>【重要】送信後、自動返信メールが届きます。また、幹事もしくは副幹事から詳細に対しての返信が届きます。必ず返信をお願いします。返信がない場合は参加登録が完了しません。</strong>
-                </div>
-                <form id="participation-form">
-                    <div class="form-group">
-                        <label>お名前（本名） <span class="required-mark">必須</span></label>
-                        <input type="text" id="name" required placeholder="例：山田 太郎">
-                    </div>
-                    <div class="form-group">
-                        <label>ご住所 <span class="required-mark">必須</span></label>
-                        <input type="text" id="address" required placeholder="例：千葉県八千代市勝田台1-1-1">
-                    </div>
-                    <div class="form-group">
-                        <label>メールアドレス <span class="required-mark">必須</span></label>
-                        <input type="email" id="email" required placeholder="example@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label>電話番号 <span class="required-mark">必須</span></label>
-                        <input type="tel" id="phone" required placeholder="090-1234-5678">
-                    </div>
-                    <div class="form-group">
-                        <label>緊急連絡先（ご家族など） <span class="required-mark">必須</span></label>
-                        <input type="text" id="emergency" required placeholder="名前/続柄/電話番号">
-                    </div>
-                    <div class="form-group">
-                        <label>生年月日 <span class="required-mark">必須</span></label>
-                        <input type="text" id="birth" required placeholder="例：1990年1月1日">
-                    </div>
-                    <div class="form-group">
-                        <label>健康状態・アレルギー等（任意）</label>
-                        <textarea id="health" placeholder="特記事項があれば記入してください"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>参加希望日 <span class="required-mark">必須</span></label>
-                        <input type="text" id="event-date" required placeholder="例：2026年3月21日">
-                    </div>
-                    <div class="form-group">
-                        <label>参加状況 <span class="required-mark">必須</span></label>
-                        <select id="status" required>
-                            <option value="">選択してください</option>
-                            <option value="参加">参加</option>
-                            <option value="不参加">不参加</option>
-                            <option value="未定">未定</option>
-                        </select>
-                    </div>
-                    <p style="color:#d32f2f; font-size:0.9rem; margin:1rem 0; text-align:center;">
-                        ※虚偽申告は即時参加禁止対象となります
-                    </p>
-                    <div class="agreement-checkbox">
-                        <input type="checkbox" id="agree-all" required>
-                        <label for="agree-all">
-                            私はチームマーメイドの<strong>利用規約</strong>、<strong>1日保険加入＆同意書</strong>、<strong>団体スポーツ保険加入同意書</strong>の内容を全て読み、理解し、同意します。<span class="required-check">【必須】</span>
-                        </label>
-                    </div>
-                    <div id="agree-error" class="error-message">
-                        ※規約・同意書への同意が必要です。チェックを入れてください。
-                    </div>
-                    <div class="simple-send-box">
-                        <button type="submit" class="simple-send-btn">
-                            <span>📧</span> 送信準備（メールアプリを開く）
-                        </button>
-                        <p class="simple-note">
-                            ※メールアプリが自動的に開きます。内容をご確認の上、送信してください。<br>
-                            <strong>【重要】送信後、自動返信メールが届きます。また、幹事もしくは副幹事から詳細に対しての返信が届きます。必ず返信をお願いします。返信がない場合は参加登録が完了しません。</strong><br>
-                            内容を変更した場合は、再度フォームから送信し直してください。
-                        </p>
-                    </div>
-                </form>
-                <div id="manualEmailArea" class="manual-email-area">
-                    <p style="font-weight:600; margin-bottom:0.5rem;">📋 メールアプリが自動的に開かない場合は、以下の内容をご利用ください</p>
-                    <p><strong>宛先:</strong> mermaidnomail1125@gmail.com (Bcc: zznjip@gmail.com)</p>
-                    <p><strong>件名:</strong> <span id="manualSubject"></span></p>
-                    <textarea id="manualBody" rows="8" readonly></textarea>
-                    <button class="copy-btn" onclick="copyManualBody()">内容をコピー</button>
-                    <p style="font-size:0.85rem; margin-top:0.5rem; color:#d32f2f;">
-                        ※内容を変更せずに、そのままメールアプリで送信してください。<br>
-                        変更した場合は、再度フォームから送信し直してください。<br>
-                        <strong>【重要】送信後、自動返信メールが届きます。また、幹事もしくは副幹事から詳細に対しての返信が届きます。必ず返信をお願いします。返信がない場合は参加登録が完了しません。</strong>
-                    </p>
-                </div>
-            </div>
-
-            <section id="gallery" class="animate-on-scroll">
-                <h2>ギャラリー</h2>
-                <div class="gallery" id="gallery-grid"></div>
-            </section>
-
-            <!-- ★★★ イベント情報はスプレッドシートから自動読み込み ★★★ -->
-            <section id="events" class="animate-on-scroll">
-                <h2>イベント情報</h2>
-                <div id="event-list"></div>
-                <div class="archive-toggle" onclick="document.getElementById('archive-container').classList.toggle('show')">
-                    過去の練習会アーカイブを見る（クリックで開閉）
-                </div>
-                <div id="archive-container">
-                    <div id="past-events"></div>
-                </div>
-            </section>
-
-            <section id="contact" class="animate-on-scroll">
-                <h2>連絡先</h2>
-                <p>Email: <a href="mailto:mermaidnomail1125@gmail.com">mermaidnomail1125@gmail.com</a></p>
-                <h2>問い合わせフォーム</h2>
-                <form class="contact-form" id="contact-form" onsubmit="return false;">
-                    <input type="text" name="name" id="contact-name" placeholder="お名前" required>
-                    <input type="email" name="email" id="contact-email" placeholder="メールアドレス" required>
-                    <textarea name="message" id="contact-message" placeholder="メッセージ" required></textarea>
-                    <button type="button" onclick="sendContactMail()">送信</button>
-                </form>
-                <div id="contact-error" style="color: #d32f2f; font-size:0.9rem; margin-top:0.5rem; display:none;"></div>
-                <div class="contact-note">
-                    もしメールアプリが開かない場合は、<a href="mailto:mermaidnomail1125@gmail.com">mermaidnomail1125@gmail.com</a> まで直接ご連絡ください。
-                </div>
-                <div class="qr-code">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://fri3789.github.io/marmaid/&size=150x150" alt="サイトQRコード">
-                    <p>サイトにアクセス</p>
-                </div>
-            </section>
-
-            <section id="terms" class="animate-on-scroll terms">
-                <h2>チームマーメイド利用規約</h2>
-                <p>制定日: 2026年04月01日（適宜改訂あり）</p>
-                <div class="important-rule">
-                    <p>⚠️ 本規約は法的拘束力を持ち、全項目に従うものとする</p>
-                </div>
-                <div class="notice-box">
-                    <p>📌 参加にはフォームからの事前登録が必須です</p>
-                    <p>📌 会場借用のため、住所・氏名の正確な提供が義務付けられます</p>
-                    <p>📌 フォーム送信後、自動返信メールが届きます。また、幹事もしくは副幹事から詳細に対しての返信が届きます。必ず返信をお願いします。返信がない場合は参加登録が完了しません。</p>
-                </div>
-                <div style="text-align:center;margin:2rem 0;padding:1.5rem;background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-                    <p style="margin-bottom:1rem;font-weight:600;color:#1e40af;">活動参加には以下の同意書への同意が必要です</p>
-                    <button onclick="showAgreementPage()" style="display:inline-flex;align-items:center;gap:0.5rem;padding:1rem 2rem;background:linear-gradient(135deg,#007aff,#5856d6);color:white;border:none;border-radius:10px;font-weight:600;cursor:pointer;font-size:1rem;min-height:48px;touch-action:manipulation;">
-                        <span>規約と同意書を確認</span>
-                        <span>→</span>
-                    </button>
-                </div>
-                <h3>第1条（目的）</h3>
-                <p>障がい者と健常者がソフトバレーを通じて心身を健康にし、相互理解と地域貢献を目指す。障がい者スポーツの普及を推進することを目的とする。</p>
-                <h3>第2条（チーム概要）</h3>
-                <ol>
-                    <li>名称: マーメイド</li>
-                    <li>設立: 2025年1月12日</li>
-                    <li>活動拠点: 千葉県内（詳細住所はフォーム登録者にのみ通知）</li>
-                    <li>競技種目: ソフトバレーボール（男女混合）</li>
-                </ol>
-                <h3>第3条（会員資格）</h3>
-                <h4>1. 加入条件（全項目必須）:</h4>
-                <ul>
-                    <li>18歳以下の場合は、親もしくは責任を持てる親族と同伴とし、同伴者も別途フォームにて登録する必要があります。</li>
-                    <li>ソフトバレーを楽しむ意欲とチーム目的への賛同。</li>
-                    <li><strong>本規約に同意し、フォームによる事前登録を行っていること（未登録者の参加は一切認めない）。</strong></li>
-                    <li><strong>日本語での円滑なコミュニケーションが可能であること（安全確保のため）。</strong></li>
-                    <li><strong>本名・現住所・緊急連絡先の正確な情報を提供できること。虚偽申告は即時参加禁止とする。</strong></li>
-                </ul>
-                <h4>2. 入会手続き:</h4>
-                <ul>
-                    <li>代表者に申告し、健康・障がい情報を正確に提供すること。</li>
-                    <li><strong>フォームに必要事項を入力し送信すること。</strong></li>
-                    <li><strong>フォーム送信後、自動返信メールが届きます。その返信メールに対して「参加同意」の旨を必ずご返信ください。返信がない場合、参加同意とみなされず、登録は完了しません。</strong></li>
-                    <li>初回参加時、本人確認書類（運転免許証・マイナンバーカード等）の提示を求める場合がある。</li>
-                </ul>
-                <h4>3. 退会:</h4>
-                <ul>
-                    <li>代表者に通知。規約違反時は退会手続きが制限される場合あり。</li>
-                </ul>
-                <h3>第4条（活動内容と会場情報の管理）</h3>
-                <h4>1. 練習:</h4>
-                <ul>
-                    <li>日程: 随時決定（メールにて通知）</li>
-                    <li>場所: 随時決定。会場の詳細住所はフォーム登録者にのみ通知する。</li>
-                    <li><strong>【厳守】会場住所の無断公開・SNS投稿を固く禁じる。違反した場合は即時参加禁止とする。</strong></li>
-                    <li>内容: 基本練習、試合形式、障がい調整</li>
-                </ul>
-                <h4>2. 試合: 未定</h4>
-                <h3>第5条（会費）</h3>
-                <h4>1. 会費:</h4>
-                <ul>
-                    <li>1回400円（変動あり）。施設利用料の変動に応じて変更する場合あり。</li>
-                    <li>入館時現金支払い。お釣りのないよう準備すること。</li>
-                </ul>
-                <h4>2. 使途:</h4>
-                <ul>
-                    <li>施設使用料、備品購入など</li>
-                </ul>
-                <h4>3. 遅延対応:</h4>
-                <ul>
-                    <li>未納時は参加不可。2回以上の未納で参加禁止対象とする。</li>
-                </ul>
-                <h3>第6条（組織と役割）</h3>
-                <h4>1. 運営体制:</h4>
-                <ul>
-                    <li>幹事、副幹事（財務・情報発信）</li>
-                </ul>
-                <h4>2. 連絡体制:</h4>
-                <ul>
-                    <li><strong>メールを公式連絡手段とする。</strong></li>
-                    <li>電話は補助的手段とする。</li>
-                    <li>障がいに配慮した連絡</li>
-                </ul>
-                <h3>第7条（ルールとマナー）</h3>
-                <h4>1. 練習ルール:</h4>
-                <ul>
-                    <li>出席確認、遅刻・欠席連絡は必須。</li>
-                    <li>施設ルール厳守。</li>
-                    <li>障がいに配慮した行動。差別的言動は即時参加禁止対象。</li>
-                </ul>
-                <h4>2. 禁止事項:</h4>
-                <ul>
-                    <li>暴力、暴言、ハラスメント行為</li>
-                    <li>飲酒、喫煙（施設内全面禁煙）</li>
-                    <li><strong>フォーム未登録での会場参加</strong></li>
-                    <li><strong>会場住所の無断公開</strong></li>
-                    <li><strong>虚偽の申告（住所・氏名・健康状態等）</strong></li>
-                </ul>
-                <h3>第8条（安全と健康管理）</h3>
-                <h4>1. 健康管理:</h4>
-                <ul>
-                    <li><strong>健康・障がい情報を正確に提供すること。虚偽申告による事故は全責任を負う。</strong></li>
-                    <li>体調不良時は参加控え。</li>
-                </ul>
-                <h4>2. 保険: 各自加入推奨</h4>
-                <h4>3. 怪我対応:</h4>
-                <ul>
-                    <li>119番通報、応急処置を行う。</li>
-                </ul>
-                <h3>第9条（大会参加）</h3>
-                <h4>1. 参加資格:</h4>
-                <ul>
-                    <li>大会ルールに従うこと。</li>
-                </ul>
-                <h4>2. 費用:</h4>
-                <ul>
-                    <li>1大会800円（事前徴収）</li>
-                </ul>
-                <h3>第10条（規約違反と処分）</h3>
-                <h4>1. 違反行為（即時参加禁止対象）:</h4>
-                <ul>
-                    <li>会費未納が2回以上</li>
-                    <li>マナー違反（他の参加者への迷惑行為）</li>
-                    <li><strong>フォーム未登録での参加試み</strong></li>
-                    <li><strong>会場住所の無断公開</strong></li>
-                    <li><strong>虚偽申告（住所・氏名・健康状態等）</strong></li>
-                </ul>
-                <h4>2. 懲戒:</h4>
-                <ul>
-                    <li>警告、停止、除名。除名の場合は即時効力を持つ。</li>
-                </ul>
-                <h3>第11条（個人情報保護と管理）</h3>
-                <h4>1. 情報管理:</h4>
-                <ul>
-                    <li>幹事・副幹事が管理。情報の取り扱いは細心の注意を払う。</li>
-                    <li>運営目的以外使用禁止。</li>
-                </ul>
-                <h4>2. 情報提供義務:</h4>
-                <ul>
-                    <li><strong>会場借用のため、参加者は正確な住所・氏名・連絡先を提供する義務を負う。</strong></li>
-                    <li><strong>提供された情報に虚偽があった場合、即時参加禁止とする。</strong></li>
-                </ul>
-                <h4>3. 住所変更の届出義務:</h4>
-                <ul>
-                    <li>住所に変更があった場合は、1週間以内に幹事または副幹事にメールで報告すること。</li>
-                </ul>
-                <h3>第12条（フォーム登録義務）</h3>
-                <h4>1. フォーム必須条項:</h4>
-                <ul>
-                    <li><strong>本チームの全ての活動参加者は、所定のフォームに必要情報を入力し送信していなければならない。</strong></li>
-                    <li><strong>フォーム未登録者の会場参加は一切認めない。</strong></li>
-                    <li><strong>見学希望者も事前にフォーム登録が必要。</strong></li>
-                </ul>
-                <h3>第13条（住所提供義務）</h3>
-                <h4>1. 住所提供の義務:</h4>
-                <ul>
-                    <li><strong>会場借用の法的要件のため、参加者は現住所を正確に提供しなければならない。</strong></li>
-                    <li><strong>提供された住所は会場借用申請および緊急時連絡のみに使用する。</strong></li>
-                </ul>
-                <h4>2. 虚偽申告の罰則:</h4>
-                <ul>
-                    <li><strong>住所・氏名に虚偽があった場合は、即時参加禁止とする。</strong></li>
-                </ul>
-                <h3>附則</h3>
-                <ol>
-                    <li>施行: 2025年6月17日</li>
-                </ol>
-                <div class="important-rule">
-                    <p>私は上記規約の全項目を理解し、真実の情報を提供することを誓約します</p>
-                </div>
-            </section>
-        </section>
-    </main>
-
-    <div id="agreement-page" style="display: none;">
-        <div class="agreement-header">
-            <h1 style="color:white;font-size:clamp(2rem,5vw,3rem);margin-bottom:1rem;">規約と同意書</h1>
-            <p style="color:rgba(255,255,255,0.9);font-size:1.2rem;">チームマーメイドの活動参加に必要な書類を確認ください</p>
         </div>
-        <div style="max-width:1200px;margin:0 auto;padding:0 2rem 4rem;">
-            <div class="agreement-notice">
-                <p style="display:flex;align-items:center;justify-content:center;gap:1rem;margin:0;">
-                    <span style="font-size:1.5rem;">📋</span>
-                    <span>参加にはフォーム登録が必須です（住所申告必須）</span>
-                </p>
-                <p style="margin-top:0.5rem;font-size:0.9rem;">⚠️ フォーム送信後、必ず返信メールに「参加同意」のご返信が必要です。</p>
-            </div>
-            <div class="pdf-loading" id="pdf-loading">
-                <div class="loading-spinner"></div>
-                <p>PDFを準備中...</p>
-            </div>
-            <div class="doc-grid">
-                <div class="doc-card">
-                    <div class="doc-icon">📋</div>
-                    <h3>利用規約</h3>
-                    <p>チームマーメイドの活動に参加する際のルールと規約です。</p>
-                    <div class="btn-group">
-                        <button class="doc-btn view" data-type="terms">
-                            <span>規約を確認</span>
-                            <span>→</span>
-                        </button>
-                        <button class="doc-btn pdf" data-type="terms">
-                            <span>PDFで保存</span>
-                            <span>↓</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="doc-card">
-                    <div class="doc-icon">📄</div>
-                    <h3>1日保険加入書</h3>
-                    <p>当日保険に加入するための同意書です。</p>
-                    <div class="btn-group">
-                        <button class="doc-btn view" data-type="insurance">
-                            <span>同意書を確認</span>
-                            <span>→</span>
-                        </button>
-                        <button class="doc-btn pdf" data-type="insurance">
-                            <span>PDFで保存</span>
-                            <span>↓</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="doc-card">
-                    <div class="doc-icon">✍️</div>
-                    <h3>スポーツ保険同意書</h3>
-                    <p>団体スポーツ保険に加入するための書類です。</p>
-                    <div class="btn-group">
-                        <button class="doc-btn view" data-type="sports">
-                            <span>同意書を確認</span>
-                            <span>→</span>
-                        </button>
-                        <button class="doc-btn pdf" data-type="sports">
-                            <span>PDFで保存</span>
-                            <span>↓</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div style="text-align:center;">
-                <a href="#" class="back-to-home" onclick="showHome(); return false;">
-                    <span>←</span>
-                    <span>メインページに戻る</span>
-                </a>
+        <div class="hero-right">
+            <div class="contact-card">
+                <p><i class="fas fa-envelope"></i> Mail</p>
+                <div class="mail">zznjip@gmail.com</div>
+                <p style="margin-top: 18px;"><i class="fas fa-phone-alt"></i> Tell</p>
+                <div class="tel">090 8110 1654</div>
+                <div class="quote">“ デザインで、価値を作る。<br>CADパースとビジュアルでプロジェクトを成功へ導く ”</div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="pdf-container" id="pdf-container">
-        <div class="pdf-toolbar">
-            <h3 id="pdf-title"></h3>
-            <div class="pdf-actions">
-                <button class="pdf-action-btn download" onclick="downloadPDF()">
-                    <span>⬇️</span>
-                    <span>PDF保存</span>
-                </button>
-                <button class="pdf-action-btn print" onclick="printPDF()">
-                    <span>🖨️</span>
-                    <span>印刷</span>
-                </button>
-                <button class="pdf-action-btn close-pdf" onclick="closePDF()">
-                    <span>✕</span>
-                    <span>閉じる</span>
-                </button>
+<!-- PORTFOLIO セクション (メイン画像は夜景ビル) -->
+<div class="portfolio-section" id="portfolioBtnSection">
+    <div class="container">
+        <div class="section-title">PORTFOLIO</div>
+        <!-- メイン画像: 夜景ビル (Pexels 高解像度・確実に表示) -->
+        <div class="portfolio-button" id="portfolioImageBtn">
+            <img src="https://images.pexels.com/photos/1432675/pexels-photo-1432675.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" 
+                 alt="夜景パースイメージ"
+                 onerror="this.onerror=null; this.src='https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop';">
+            <div class="btn-caption"><i class="fas fa-arrow-circle-down"></i> クリックして実績一覧を表示</div>
+        </div>
+
+        <!-- 実績リスト：各「ポートフォリオを見る」は指定のGoogle Drive URLへ -->
+        <div class="achievements-list" id="achievementsList">
+            <h3>制作実績 / 担当プロジェクト</h3>
+            <div class="achievement-item">
+                <span><i class="fas fa-building"></i> 某大手プロジェクト パースデザイン（コンペティション用）</span>
+                <a href="https://drive.google.com/file/d/1tsQbH4rNuNIzVVtqG5S-Hj5p2q9UP8wt/view?usp=sharing" class="portfolio-link" target="_blank" rel="noopener noreferrer">ポートフォリオを見る →</a>
             </div>
-        </div>
-        <div class="mobile-pdf-actions" id="mobile-pdf-actions">
-            <button class="pdf-action-btn download" onclick="downloadPDF()">
-                <span>⬇️</span>
-                <span>PDF保存</span>
-            </button>
-            <button class="pdf-action-btn print" onclick="printPDF()">
-                <span>🖨️</span>
-                <span>印刷</span>
-            </button>
-            <button class="pdf-action-btn close-pdf" onclick="closePDF()">
-                <span>✕</span>
-                <span>閉じる</span>
-            </button>
-        </div>
-        <div class="pdf-content" id="pdf-content"></div>
-    </div>
-
-    <a id="pdf-download-link" class="pdf-download-link" download="チームマーメイド_同意書.pdf"></a>
-
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
-        <span class="lightbox-prev" onclick="prevImage(event)">&#10094;</span>
-        <span class="lightbox-next" onclick="nextImage(event)">&#10095;</span>
-        <div class="lightbox-content" onclick="event.stopPropagation()">
-            <img id="lightbox-img" src="" alt="">
-            <div class="lightbox-counter" id="lightbox-counter"></div>
+            <div class="achievement-item">
+                <span><i class="fas fa-brochure"></i> パンフレット用パースデザイン（製品・建築ビジュアル）</span>
+                <a href="https://drive.google.com/file/d/1tsQbH4rNuNIzVVtqG5S-Hj5p2q9UP8wt/view?usp=sharing" class="portfolio-link" target="_blank" rel="noopener noreferrer">ポートフォリオを見る →</a>
+            </div>
+            <div class="achievement-item">
+                <span><i class="fas fa-file-signature"></i> 中小企業向け 競合入札用パンフレットデザイン</span>
+                <a href="https://drive.google.com/file/d/1tsQbH4rNuNIzVVtqG5S-Hj5p2q9UP8wt/view?usp=sharing" class="portfolio-link" target="_blank" rel="noopener noreferrer">ポートフォリオを見る →</a>
+            </div>
+            <div class="achievement-item">
+                <span><i class="fas fa-palette"></i> チラシ・販促ツール / デザイン全般の制作ディレクション</span>
+                <a href="https://drive.google.com/file/d/1tsQbH4rNuNIzVVtqG5S-Hj5p2q9UP8wt/view?usp=sharing" class="portfolio-link" target="_blank" rel="noopener noreferrer">ポートフォリオを見る →</a>
+            </div>
+            <div class="achievement-item">
+                <span><i class="fas fa-cube"></i> CAD図面からのリアリスティックパース / 空間レンダリング</span>
+                <a href="https://drive.google.com/file/d/1tsQbH4rNuNIzVVtqG5S-Hj5p2q9UP8wt/view?usp=sharing" class="portfolio-link" target="_blank" rel="noopener noreferrer">ポートフォリオを見る →</a>
+            </div>
+            <div class="achievement-item">
+                <span><i class="fas fa-chart-line"></i> 企業ブランディング × パースを用いたプレゼン資料</span>
+                <a href="https://drive.google.com/file/d/1tsQbH4rNuNIzVVtqG5S-Hj5p2q9UP8wt/view?usp=sharing" class="portfolio-link" target="_blank" rel="noopener noreferrer">ポートフォリオを見る →</a>
+            </div>
+            <div class="achievement-item">
+                <span><i class="fas fa-baseball-ball"></i> ソフトボールチーム『マーメイド』公式サイト制作・運営</span>
+                <a href="https://fri3789.github.io/marmaid/" class="portfolio-link" target="_blank" rel="noopener noreferrer">サイトを見る →</a>
+            </div>
+            <div class="note-text">※ 「ポートフォリオを見る」は共通のGoogle Drive作品ファイルを開きます。マーメイドのみ専用サイトです。</div>
         </div>
     </div>
+</div>
 
-    <div class="modal" id="status-modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal('status')">&times;</span>
-            <h3 id="status-title">練習会参加状況を選択</h3>
-            <button class="status-btn" data-status="参加">参加</button>
-            <button class="status-btn" data-status="不参加">不参加</button>
-            <button class="status-btn" data-status="未定">未定</button>
-        </div>
-    </div>
-
-    <div class="modal" id="form-modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal('form')">&times;</span>
-            <h3 id="form-title">練習会登録情報入力</h3>
-            <form id="register-form" class="event-form">
-                <div><label for="modal-name">名前:</label><input type="text" id="modal-name" required></div>
-                <div><label for="modal-address">住所:</label><input type="text" id="modal-address" required placeholder="例：千葉県八千代市勝田台1-1-1"></div>
-                <div><label for="modal-email">メールアドレス:</label><input type="email" id="modal-email" required></div>
-                <div><label for="modal-phone">電話番号:</label><input type="tel" id="modal-phone" required></div>
-                <div><label for="modal-emergency">緊急連絡先:</label><input type="text" id="modal-emergency" required placeholder="家族・親族の名前/続柄/電話番号"></div>
-                <div><label for="modal-birth">生年月日:</label><input type="text" id="modal-birth" required placeholder="例：1990年1月1日"></div>
-                <input type="hidden" id="modal-status">
-                <input type="hidden" id="modal-event-date">
-                <p style="color:#d32f2f; font-size:0.9rem; margin:1rem 0;">※虚偽申告は即時参加禁止対象となります</p>
-                <div class="reply-required-note" style="margin:0.5rem 0;">
-                    <strong>⚠️ 重要：</strong>送信後、自動返信メールが届きます。必ず「参加同意」の返信をお願いします。
-                </div>
-                <button type="submit">送信</button>
+<!-- お問い合わせフォーム (自動送信) -->
+<div class="contact-form-section" id="contactFormSection">
+    <div class="container">
+        <div class="form-container">
+            <h2>Inquiry</h2>
+            <p>パース制作・デザイン相談・お仕事依頼はこちらからお気軽にご連絡ください。</p>
+            <form id="contactForm" action="https://formsubmit.co/zznjip@gmail.com" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://kaitosaito.design/thanks">
+                <input type="hidden" name="_subject" value="ポートフォリオサイトより問い合わせ（齊藤 快途）">
+                <div class="input-group"><input type="text" name="name" placeholder="お名前 / Name" required></div>
+                <div class="input-group"><input type="email" name="email" placeholder="メールアドレス / Email" required></div>
+                <div class="input-group"><textarea name="message" placeholder="お問い合わせ内容 / プロジェクト詳細" required></textarea></div>
+                <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> 送信する</button>
+                <div class="form-status" id="formStatus"></div>
             </form>
         </div>
     </div>
+</div>
 
-    <div id="terms-modal-agreement" class="agreement-modal">
-        <div class="agreement-modal-content">
-            <div class="agreement-modal-header">
-                <h3>チームマーメイド利用規約</h3>
-                <button class="agreement-close-btn" data-close="terms">×</button>
-            </div>
-            <div class="agreement-modal-body"></div>
-        </div>
-    </div>
+<footer>
+    <div class="container">© 2026 Kaito Saito — Design Creates The Future.</div>
+</footer>
 
-    <div id="insurance-modal-agreement" class="agreement-modal">
-        <div class="agreement-modal-content">
-            <div class="agreement-modal-header">
-                <h3>1日保険加入＆同意書</h3>
-                <button class="agreement-close-btn" data-close="insurance">×</button>
-            </div>
-            <div class="agreement-modal-body">
-                <p><strong>（チームマーメイド 当日その場で加入用）</strong></p>
-                <p>─── ここから下は当日その場でご記入ください ───</p>
-                <h4>基本情報</h4>
-                <p><strong>生年月日:</strong> 　　年　　月　　日</p>
-                <p><strong>氏名:</strong> ＿＿＿＿＿＿＿＿＿＿＿＿＿＿</p>
-                <p><strong>住所:</strong> ＿＿＿＿＿＿＿＿＿＿＿＿＿＿</p>
-                <p><strong>電話番号:</strong> ＿＿＿−＿＿＿＿−＿＿＿＿</p>
-                <h4>加入確認事項</h4>
-                <ul>
-                    <li>□ 今、スマホでURLにアクセスして「1日スポーツ保険」に加入手続きを完了した</li>
-                    <li>□ 重要事項説明書・約款を全て読み、内容を理解した</li>
-                    <li>□ 加入完了画面をスタッフに提示した</li>
-                </ul>
-                <p><strong>加入完了時刻:</strong> 年 月 日 時 分</p>
-                <h4>保険内容</h4>
-                <ul>
-                    <li>保険会社: アクサダイレクト損害保険株式会社</li>
-                    <li>商品名: 1日スポーツ保険「レクリエーションサポート」</li>
-                    <li>URL: https://www.axa-direct.co.jp/leisure/</li>
-                </ul>
-                <p><strong>署名:</strong> ＿＿＿＿＿＿＿＿＿＿＿＿＿＿</p>
-                <p><strong>記入日:</strong> 2025年 月 日</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="sports-modal-agreement" class="agreement-modal">
-        <div class="agreement-modal-content">
-            <div class="agreement-modal-header">
-                <h3>団体スポーツ保険加入同意書</h3>
-                <button class="agreement-close-btn" data-close="sports">×</button>
-            </div>
-            <div class="agreement-modal-body">
-                <p><strong>（チームマーメイド 団体スポーツ保険加入用）</strong></p>
-                <p>─── ここから下は当日その場でご記入ください ───</p>
-                <h4>参加者情報</h4>
-                <p><strong>生年月日:</strong> 　　年　　月　　日</p>
-                <p><strong>年齢:</strong> 　　歳</p>
-                <p><strong>氏名:</strong> ＿＿＿＿＿＿＿＿＿＿＿＿＿＿</p>
-                <p><strong>住所:</strong> ＿＿＿＿＿＿＿＿＿＿＿＿＿＿</p>
-                <p><strong>電話番号:</strong> ＿＿＿−＿＿＿＿−＿＿＿＿</p>
-                <h4>加入手続き確認</h4>
-                <ul>
-                    <li>□ 保険加入サイトにアクセスし、団体スポーツ保険の加入手続きを完了した</li>
-                    <li>□ 重要事項説明書・約款を全て読み、内容を理解した</li>
-                    <li>□ 加入完了画面をスタッフに提示した</li>
-                </ul>
-                <p><strong>加入完了時刻:</strong> 年 月 日 時 分</p>
-                <p><strong>署名:</strong> ＿＿＿＿＿＿＿＿＿＿＿＿＿＿</p>
-                <p><strong>日付:</strong> 　　年　　月　　日</p>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>© 2026 チームマーメイド. Mayumi Huzimitu Kaito Saito YAMADA, All rights reserved.</p>
-    </footer>
-
-    <script>
-        // ======================== 設定 ========================
-        // ★★★ あなたのスプレッドシートIDをここに入力してください ★★★
-        const SPREADSHEET_ID = 'あなたのスプレッドシートID';  // ← ここを書き換える！
-
-        // ======================== イベント読み込み（Googleスプレッドシート） ========================
-        async function loadEventsFromSheet() {
-            const url = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:csv`;
-            try {
-                const res = await fetch(url);
-                const csvText = await res.text();
-                const lines = csvText.trim().split('\n');
-                if (lines.length < 2) {
-                    console.warn('スプレッドシートにデータがありません');
-                    return;
-                }
-                const headers = lines[0].split(',').map(h => h.replace(/^"|"$/g, ''));
-                const events = lines.slice(1).map(line => {
-                    // 簡易的なCSVパース（引用符内のカンマには非対応だが、実用上問題ない）
-                    const values = [];
-                    let inQuote = false;
-                    let current = '';
-                    for (let ch of line) {
-                        if (ch === '"') {
-                            inQuote = !inQuote;
-                        } else if (ch === ',' && !inQuote) {
-                            values.push(current);
-                            current = '';
-                        } else {
-                            current += ch;
-                        }
-                    }
-                    values.push(current);
-                    // 各列の値をトリムしてオブジェクトに
-                    const ev = {};
-                    headers.forEach((h, idx) => {
-                        ev[h] = values[idx] ? values[idx].replace(/^"|"$/g, '').trim() : '';
-                    });
-                    return ev;
-                });
-                renderEvents(events);
-            } catch (err) {
-                console.error('スプレッドシート読み込みエラー:', err);
-                document.getElementById('event-list').innerHTML = '<p style="color:red;">イベント情報の読み込みに失敗しました。</p>';
-            }
-        }
-
-        function renderEvents(events) {
-            const today = new Date();
-            today.setHours(0,0,0,0);
-            const mainList = document.getElementById('event-list');
-            const pastList = document.getElementById('past-events');
-            if (!mainList || !pastList) return;
-
-            events.sort((a,b) => new Date(a.date) - new Date(b.date));
-            mainList.innerHTML = '';
-            pastList.innerHTML = '';
-
-            events.forEach((ev, idx) => {
-                const eventDate = new Date(ev.date);
-                eventDate.setHours(0,0,0,0);
-                const isPast = eventDate < today;
-                const nextEvent = events[idx+1];
-                const nextDisplay = nextEvent ? nextEvent.display : '未定';
-                const nextPracticeText = isPast
-                    ? (nextEvent ? `この練習会は${ev.display}に終了しました。次回は${nextDisplay}です。` : `この練習会は${ev.display}に終了しました。`)
-                    : (nextEvent ? `この練習会は${ev.display}に開催予定。次回は${nextDisplay}です。` : `この練習会は${ev.display}に開催予定。`);
-                
-                const item = document.createElement('div');
-                item.className = `event-item ${isPast ? 'past' : ''}`;
-                item.innerHTML = `
-                    <h3>${ev.display} バレーボール練習会${isPast ? ' <small style="color:#999;">（終了）</small>' : ''}</h3>
-                    <p><strong>開催時間→</strong> ${ev.time}</p>
-                    <p><strong>場所→</strong> ${ev.venue}</p>
-                    <p>${nextPracticeText}</p>
-                    <img src="${ev.img}" alt="${ev.display}練習会登録ボタン" loading="lazy"
-                         ${isPast ? '' : `onclick="openStatus('${ev.display}')" style="cursor:pointer;"`}
-                         onerror="this.src='https://via.placeholder.com/300x200?text=画像エラー'">
-                `;
-                if (isPast) pastList.appendChild(item);
-                else mainList.appendChild(item);
-            });
-        }
-
-        // ======================== ギャラリー（固定） ========================
-        const galleryImages = [
-            { src: 'https://raw.githubusercontent.com/fri3789/marmaid/main/images/LINE_ALBUM_20250602_250925_1.jpg', caption: '練習風景①' },
-            { src: 'https://raw.githubusercontent.com/fri3789/marmaid/main/images/LINE_ALBUM_20250602_250925_3.jpg', caption: '練習風景②' },
-            { src: 'https://raw.githubusercontent.com/fri3789/marmaid/main/images/LINE_ALBUM_20250623_250925_12.jpg', caption: '練習風景③' },
-            { src: 'https://raw.githubusercontent.com/fri3789/marmaid/main/images/LINE_ALBUM_20250623_250925_14.jpg', caption: '練習風景④' },
-            { src: 'https://raw.githubusercontent.com/fri3789/marmaid/main/images/LINE_ALBUM_20250906大会_250925_22.jpg', caption: '大会風景①' },
-            { src: 'https://raw.githubusercontent.com/fri3789/marmaid/main/images/LINE_ALBUM_20250906大会_250925_25.jpg', caption: '大会風景②' },
-            { src: 'https://raw.githubusercontent.com/fri3789/marmaid/main/images/LINE_ALBUM_20250906大会_250925_28.jpg', caption: '大会風景③' },
-            { src: 'https://raw.githubusercontent.com/fri3789/marmaid/main/images/LINE_ALBUM_20250906大会_250925_3.jpg', caption: '大会風景④' },
-            { src: 'https://raw.githubusercontent.com/fri3789/marmaid/main/images/LINE_ALBUM_20250906大会_250925_5.jpg', caption: '大会風景⑤' }
-        ];
-
-        function renderGallery() {
-            const gallery = document.getElementById('gallery-grid');
-            if (!gallery) return;
-            gallery.innerHTML = '';
-            galleryImages.forEach((img, index) => {
-                const item = document.createElement('div');
-                item.className = 'gallery-item';
-                item.setAttribute('data-index', index);
-                item.innerHTML = `
-                    <img src="${img.src}" alt="${img.caption}" loading="lazy" onerror="this.src='https://via.placeholder.com/300?text=画像エラー'">
-                    <div class="gallery-caption">${img.caption}</div>
-                `;
-                item.addEventListener('click', () => openLightbox(index));
-                gallery.appendChild(item);
-            });
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) entry.target.classList.add('visible');
-                });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.gallery-item').forEach(item => observer.observe(item));
-        }
-
-        // ライトボックス関連
-        let currentIndex = 0;
-        window.openLightbox = function(index) {
-            currentIndex = index;
-            const img = galleryImages[index];
-            document.getElementById('lightbox-img').src = img.src;
-            document.getElementById('lightbox-img').alt = img.caption;
-            updateCounter();
-            document.getElementById('lightbox').classList.add('active');
-        };
-        window.closeLightbox = function(e) {
-            if (e) e.stopPropagation();
-            document.getElementById('lightbox').classList.remove('active');
-        };
-        window.prevImage = function(e) {
-            e.stopPropagation();
-            currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-            const img = galleryImages[currentIndex];
-            document.getElementById('lightbox-img').src = img.src;
-            document.getElementById('lightbox-img').alt = img.caption;
-            updateCounter();
-        };
-        window.nextImage = function(e) {
-            e.stopPropagation();
-            currentIndex = (currentIndex + 1) % galleryImages.length;
-            const img = galleryImages[currentIndex];
-            document.getElementById('lightbox-img').src = img.src;
-            document.getElementById('lightbox-img').alt = img.caption;
-            updateCounter();
-        };
-        function updateCounter() {
-            document.getElementById('lightbox-counter').textContent = `${currentIndex+1} / ${galleryImages.length}`;
-        }
-
-        // その他の関数（元のHTMLからほぼそのまま）
-        window.showHome = function() {
-            document.getElementById('agreement-page').style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
-            document.getElementById('pdf-container').classList.remove('active');
-            document.getElementById('mobile-pdf-actions').classList.remove('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-        window.showSection = function(sectionId) {
-            showHome();
-            setTimeout(() => {
-                const section = document.getElementById(sectionId);
-                if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 100);
-        };
-        window.showAgreementPage = function() {
-            document.getElementById('main-content').style.display = 'none';
-            document.getElementById('agreement-page').style.display = 'block';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-        function toggleNav() {
-            document.getElementById('nav-menu').classList.toggle('active');
-        }
-        function validateEmail(email) {
-            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-        }
-        function validatePhone(phone) {
-            return /^[0-9\-+\s()]+$/.test(phone) && phone.replace(/\D/g, '').length >= 10;
-        }
-        function validateBirth(birth) {
-            return /^\d{4}年\d{1,2}月\d{1,2}日$/.test(birth) || /^\d{4}-\d{2}-\d{2}$/.test(birth);
-        }
-        document.getElementById('participation-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            if (!document.getElementById('agree-all').checked) {
-                document.getElementById('agree-error').style.display = 'block';
-                return;
-            } else {
-                document.getElementById('agree-error').style.display = 'none';
-            }
-            const name = document.getElementById('name').value.trim();
-            const address = document.getElementById('address').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const emergency = document.getElementById('emergency').value.trim();
-            const birth = document.getElementById('birth').value.trim();
-            const health = document.getElementById('health').value.trim() || '特記事項なし';
-            const eventDate = document.getElementById('event-date').value.trim();
-            const status = document.getElementById('status').value;
-            if (!name || !address || !email || !phone || !emergency || !birth || !eventDate || !status) {
-                alert('全ての必須項目を入力してください。');
-                return;
-            }
-            if (!validateEmail(email)) {
-                alert('正しいメールアドレスを入力してください。');
-                return;
-            }
-            if (!validatePhone(phone)) {
-                alert('電話番号は10桁以上の数字、ハイフン、括弧のみ使用できます。');
-                return;
-            }
-            if (!validateBirth(birth)) {
-                alert('生年月日は「YYYY年MM月DD日」または「YYYY-MM-DD」形式で入力してください。');
-                return;
-            }
-            const body = `【チームマーメイド参加申込】
-━━━━━━━━━━━━━━━━
-■ 参加状況: ${status}
-■ 参加希望日: ${eventDate}
-■ 氏名: ${name}
-■ 住所: ${address}
-■ メール: ${email}
-■ 電話: ${phone}
-■ 緊急連絡先: ${emergency}
-■ 生年月日: ${birth}
-■ 健康状態: ${health}
-━━━━━━━━━━━━━━━━
-
-【誓約】
-私は上記情報が真実であることを誓約します。
-虚偽申告が発覚した場合、即時参加禁止となることを理解し同意します。
-
-【重要】
-このメール送信後、自動返信メールが届きますので、必ず「参加同意」の返信をお願いします。
-返信がない場合は参加登録が完了しません。`;
-            const subject = encodeURIComponent(`【参加申込】${eventDate} - ${name}`);
-            document.getElementById('manualSubject').textContent = `【参加申込】${eventDate} - ${name}`;
-            document.getElementById('manualBody').value = body;
-            const successMsg = document.getElementById('successMessage');
-            successMsg.classList.add('show');
-            window.location.href = `mailto:mermaidnomail1125@gmail.com?bcc=zznjip@gmail.com&subject=${subject}&body=${encodeURIComponent(body)}`;
-            setTimeout(() => {
-                document.getElementById('manualEmailArea').classList.add('show');
-            }, 1000);
-            setTimeout(() => successMsg.classList.remove('show'), 4000);
-        });
-        window.copyManualBody = function() {
-            const body = document.getElementById('manualBody');
-            body.select();
-            document.execCommand('copy');
-            alert('本文をコピーしました。メールアプリに貼り付けて送信してください。\n送信後、必ず自動返信メールに「参加同意」の返信をお願いします。');
-        };
-        window.sendContactMail = function() {
-            const name = document.getElementById('contact-name').value.trim();
-            const email = document.getElementById('contact-email').value.trim();
-            const message = document.getElementById('contact-message').value.trim();
-            const errorDiv = document.getElementById('contact-error');
-            if (!name || !email || !message) {
-                errorDiv.style.display = 'block';
-                errorDiv.textContent = '全ての項目を入力してください。';
-                return;
-            }
-            errorDiv.style.display = 'none';
-            const body = `名前: ${name}\nメール: ${email}\nメッセージ: ${message}`;
-            window.location.href = `mailto:mermaidnomail1125@gmail.com?bcc=zznjip@gmail.com&subject=チームマーメイド問い合わせ&body=${encodeURIComponent(body)}`;
-            document.getElementById('contact-name').value = '';
-            document.getElementById('contact-email').value = '';
-            document.getElementById('contact-message').value = '';
-            alert('お問い合わせメールを作成しました。送信してください。');
-        };
-        document.getElementById('register-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('modal-name').value.trim();
-            const address = document.getElementById('modal-address').value.trim();
-            const email = document.getElementById('modal-email').value.trim();
-            const phone = document.getElementById('modal-phone').value.trim();
-            const emergency = document.getElementById('modal-emergency').value.trim();
-            const birth = document.getElementById('modal-birth').value.trim();
-            const status = document.getElementById('modal-status').value;
-            const eventDate = document.getElementById('modal-event-date').value;
-            if (!name || !address || !email || !phone || !emergency || !birth) {
-                alert('全ての必須項目を入力してください。');
-                return;
-            }
-            const body = `【チームマーメイド参加申込（イベント用）】
-━━━━━━━━━━━━━━━━
-■ 参加状況: ${status}
-■ 参加希望日: ${eventDate}
-■ 氏名: ${name}
-■ 住所: ${address}
-■ メール: ${email}
-■ 電話: ${phone}
-■ 緊急連絡先: ${emergency}
-■ 生年月日: ${birth}
-━━━━━━━━━━━━━━━━
-
-【誓約】
-私は上記情報が真実であることを誓約します。
-虚偽申告が発覚した場合、即時参加禁止となることを理解し同意します。
-
-【重要】
-このメール送信後、自動返信メールが届きますので、必ず「参加同意」の返信をお願いします。
-返信がない場合は参加登録が完了しません。`;
-            window.location.href = `mailto:mermaidnomail1125@gmail.com?bcc=zznjip@gmail.com&subject=【参加申込】${eventDate} - ${name}&body=${encodeURIComponent(body)}`;
-            alert('メールアプリが開きます。内容をご確認の上、送信してください。\n送信後、必ず自動返信メールに「参加同意」の返信をお願いします。');
-            document.getElementById('form-modal').style.display = 'none';
-        });
-        document.querySelectorAll('.status-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.getElementById('modal-status').value = this.dataset.status;
-                document.getElementById('form-modal').style.display = 'block';
-                document.getElementById('status-modal').style.display = 'none';
-            });
-        });
-        window.closeModal = function(type) {
-            document.getElementById(`${type}-modal`).style.display = 'none';
-        };
-        window.openStatus = function(date) {
-            document.getElementById('status-title').textContent = `${date}練習会参加状況を選択`;
-            document.getElementById('modal-event-date').value = date;
-            document.getElementById('status-modal').style.display = 'block';
-        };
-        window.openAgreementModal = function(type) {
-            document.getElementById(`${type}-modal-agreement`).classList.add('active');
-        };
-        window.closeAgreementModal = function(type) {
-            document.getElementById(`${type}-modal-agreement`).classList.remove('active');
-        };
-        window.showPDF = function(type) { alert('PDF機能は開発中です。'); };
-        window.closePDF = function() {
-            document.getElementById('pdf-container').classList.remove('active');
-            document.getElementById('mobile-pdf-actions').classList.remove('active');
-            showAgreementPage();
-        };
-        window.printPDF = function() { window.print(); };
-        window.downloadPDF = function() { alert('ダウンロード機能は開発中です。'); };
-
-        document.addEventListener('click', function(e) {
-            const docBtn = e.target.closest('.doc-btn');
-            if (docBtn) {
+<script>
+    (function() {
+        // ポートフォリオ画像クリックで実績リスト表示/非表示
+        const btnWrapper = document.getElementById('portfolioImageBtn');
+        const achievementsDiv = document.getElementById('achievementsList');
+        if (btnWrapper && achievementsDiv) {
+            btnWrapper.addEventListener('click', (e) => {
                 e.preventDefault();
-                const type = docBtn.dataset.type;
-                if (docBtn.classList.contains('view')) openAgreementModal(type);
-                else if (docBtn.classList.contains('pdf')) showPDF(type);
-                return;
-            }
-            const closeBtn = e.target.closest('.agreement-close-btn');
-            if (closeBtn) closeAgreementModal(closeBtn.dataset.close);
-        });
-        document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('modal')) e.target.style.display = 'none';
-            if (e.target.classList.contains('agreement-modal')) e.target.classList.remove('active');
-            if (e.target.classList.contains('pdf-container')) closePDF();
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
-                document.querySelectorAll('.agreement-modal').forEach(m => m.classList.remove('active'));
-                document.getElementById('lightbox').classList.remove('active');
-                closePDF();
-            }
-        });
-        document.addEventListener('touchstart', function() {}, {passive: true});
+                achievementsDiv.classList.toggle('show');
+                if (achievementsDiv.classList.contains('show')) {
+                    setTimeout(() => {
+                        achievementsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 100);
+                }
+            });
+        }
 
-        // 初期化
-        loadEventsFromSheet();
-        renderGallery();
-        const termsModal = document.querySelector('#terms-modal-agreement .agreement-modal-body');
-        if (termsModal) termsModal.innerHTML = document.getElementById('terms').innerHTML;
-    </script>
+        // お問い合わせ送信時のステータス表示
+        const form = document.getElementById('contactForm');
+        const statusDiv = document.getElementById('formStatus');
+        if (form) {
+            form.addEventListener('submit', () => {
+                statusDiv.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> 送信中...';
+                statusDiv.style.color = "#aad0ff";
+            });
+        }
+
+        // スムーススクロール (ナビ)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    const targetEl = document.querySelector(targetId);
+                    if (targetEl) {
+                        e.preventDefault();
+                        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+
+        // 画像フォールバックの最終確認（すでにonerrorで二重対応済みですが念のため）
+        const mainImg = document.querySelector('.portfolio-button img');
+        if (mainImg && mainImg.complete && mainImg.naturalWidth === 0) {
+            mainImg.src = 'https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop';
+        }
+    })();
+</script>
 </body>
 </html>
