@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
-    <title>Kaito Saito | CADパースデザインポートフォリオ — Design Creates The Future</title>
+    <title>Kaito Saito | CADパースデザインポートフォリオ</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -11,29 +11,24 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
         }
-
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             background: radial-gradient(circle at 10% 20%, #0a1128, #030617);
             color: #eef4ff;
             line-height: 1.5;
             scroll-behavior: smooth;
         }
-
         :root {
             --glow-blue: #2f6ea2;
             --border-dim: rgba(56, 110, 160, 0.35);
             --card-bg: rgba(8, 20, 40, 0.75);
         }
-
         .container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 24px;
         }
-
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -69,7 +64,6 @@
             color: white;
             text-shadow: 0 0 5px #3d8bcd;
         }
-
         .hero {
             display: flex;
             flex-wrap: wrap;
@@ -154,8 +148,6 @@
             font-style: italic;
             color: #bcd3fb;
         }
-
-        /* PORTFOLIO AREA */
         .portfolio-section {
             padding: 60px 0;
             border-top: 1px solid var(--border-dim);
@@ -183,7 +175,6 @@
             transition: transform 0.2s, box-shadow 0.2s;
             display: block;
             margin: 0 auto;
-            background: #11223a;
         }
         .portfolio-button:hover img {
             transform: scale(1.01);
@@ -195,7 +186,6 @@
             font-weight: 500;
             color: #bbd6ff;
         }
-
         .achievements-list {
             background: rgba(6, 18, 32, 0.7);
             backdrop-filter: blur(8px);
@@ -250,69 +240,99 @@
             color: #9bbce5;
             text-align: center;
         }
-
-        /* CONTACT FORM */
+        
+        /* ==================== 新しいメールフォームのスタイル ==================== */
         .contact-form-section {
             padding: 70px 0;
             border-top: 1px solid var(--border-dim);
             background: rgba(3, 10, 28, 0.5);
+            text-align: center;
         }
         .form-container {
-            max-width: 680px;
+            max-width: 600px;
             margin: 0 auto;
-            background: rgba(8, 24, 46, 0.85);
+            background: var(--card-bg);
             backdrop-filter: blur(12px);
-            border-radius: 40px;
-            padding: 40px 36px;
-            border: 1px solid rgba(64, 118, 168, 0.5);
+            border-radius: 36px;
+            padding: 40px 32px;
+            border: 1px solid var(--border-dim);
         }
         .form-container h2 {
-            font-size: 1.9rem;
+            font-size: 1.8rem;
             margin-bottom: 12px;
-            font-weight: 700;
+            font-weight: 600;
         }
         .form-container p {
-            margin-bottom: 28px;
+            margin-bottom: 30px;
             color: #bfd9fc;
+            font-size: 0.9rem;
         }
-        .input-group {
-            margin-bottom: 26px;
+        .form-group {
+            margin-bottom: 24px;
+            text-align: left;
         }
-        .input-group input, .input-group textarea {
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #cde2fc;
+        }
+        .form-group input,
+        .form-group textarea {
             width: 100%;
             background: rgba(1, 12, 28, 0.8);
             border: 1px solid var(--border-dim);
-            padding: 15px 22px;
-            border-radius: 36px;
+            padding: 14px 18px;
+            border-radius: 12px;
             font-size: 1rem;
             color: white;
             font-family: inherit;
+            transition: 0.2s;
         }
-        .input-group input:focus, .input-group textarea:focus {
+        .form-group input:focus,
+        .form-group textarea:focus {
             outline: none;
             border-color: var(--glow-blue);
-            box-shadow: 0 0 0 3px rgba(47, 110, 162, 0.3);
+            box-shadow: 0 0 0 2px rgba(47, 110, 162, 0.3);
         }
-        .input-group textarea {
+        .form-group textarea {
             min-height: 120px;
             resize: vertical;
-            border-radius: 28px;
         }
         .btn-submit {
             background: var(--glow-blue);
             border: none;
-            padding: 14px 24px;
+            width: 100%;
+            padding: 14px;
             font-size: 1rem;
             font-weight: 700;
             color: #0a1428;
             border-radius: 60px;
             cursor: pointer;
-            width: 100%;
+            transition: 0.2s;
+            font-family: inherit;
+            margin-top: 10px;
         }
         .btn-submit:hover {
             background: #4183bb;
             transform: scale(0.98);
         }
+        .info-message {
+            background: rgba(47, 110, 162, 0.15);
+            border-radius: 12px;
+            padding: 14px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #bbd6ff;
+            text-align: left;
+            border-left: 3px solid var(--glow-blue);
+        }
+        .info-message i {
+            margin-right: 8px;
+            color: var(--glow-blue);
+        }
+        /* ==================== スタイルここまで ==================== */
+
         footer {
             text-align: center;
             padding: 40px 0 48px;
@@ -320,12 +340,12 @@
             color: #86aed4;
             border-top: 1px solid rgba(64, 110, 148, 0.3);
         }
-
         @media (max-width: 750px) {
             .container { padding: 0 20px; }
             .hero { gap: 32px; padding: 40px 0 60px; }
             .achievement-item { flex-direction: column; align-items: flex-start; gap: 8px; }
             .portfolio-link { white-space: normal; margin-left: 28px; }
+            .form-container { margin: 0 20px; padding: 32px 24px; }
         }
         @media (max-width: 550px) {
             .navbar { flex-direction: column; align-items: flex-start; }
@@ -334,24 +354,21 @@
     </style>
 </head>
 <body>
-
 <div class="container">
     <nav class="navbar">
         <div class="logo"><a href="#">Kaito<span>Saito</span></a></div>
         <ul class="nav-links">
             <li><a href="#portfolioBtnSection">PORTFOLIO</a></li>
-            <li><a href="#contactFormSection">CONTACT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
         </ul>
     </nav>
-
-    <!-- ヒーロー/名刺 -->
     <div class="hero">
         <div class="hero-left">
             <div class="hero-tagline">Design<br>Creates<br>The Future.</div>
             <div class="hero-name">齊藤 快途 <small>Kaito Saito</small></div>
-            <div class="hero-desc">CADから生み出す確かなパース / デザインで価値を創造。<br>某大手プロジェクト、入札用パンフレットからチラシまで。<br>機能性と美を融合したビジュアルを提供します。</div>
+            <div class="hero-desc">CADから生み出す確かなパース / デザインで価値を創造。<br>某大手プロジェクト、入札用パンフレットからチラシまで。</div>
             <div class="skill-badge">
-                <span>CAD / 3Dパース</span><span>3ds Max / V-Ray</span><span>Adobe Creative Cloud</span><span>AI × Web Design</span><span>パースデザイン</span>
+                <span>CAD / 3Dパース</span><span>3ds Max / V-Ray</span><span>Adobe Creative Cloud</span><span>パースデザイン</span>
             </div>
         </div>
         <div class="hero-right">
@@ -366,73 +383,59 @@
     </div>
 </div>
 
-<!-- PORTFOLIO セクション (メイン画像は夜景ビル) -->
+<!-- PORTFOLIO セクション（夜景画像） -->
 <div class="portfolio-section" id="portfolioBtnSection">
     <div class="container">
         <div class="section-title">PORTFOLIO</div>
-        <!-- メイン画像: 夜景ビル (Pexels 高解像度・確実に表示) -->
         <div class="portfolio-button" id="portfolioImageBtn">
             <img src="https://images.pexels.com/photos/1432675/pexels-photo-1432675.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" 
                  alt="夜景パースイメージ"
                  onerror="this.onerror=null; this.src='https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop';">
             <div class="btn-caption"><i class="fas fa-arrow-circle-down"></i> クリックして実績一覧を表示</div>
         </div>
-
-        <!-- 実績リスト：各「ポートフォリオを見る」は指定のGoogle Drive URLへ -->
         <div class="achievements-list" id="achievementsList">
             <h3>制作実績 / 担当プロジェクト</h3>
-            <div class="achievement-item">
-                <span><i class="fas fa-building"></i> 某大手プロジェクト パースデザイン（コンペティション用）</span>
-                <a href="https://drive.google.com/file/d/1tsQbH4rNuNIzVVtqG5S-Hj5p2q9UP8wt/view?usp=sharing" class="portfolio-link" target="_blank" rel="noopener noreferrer">ポートフォリオを見る →</a>
-            </div>
-            <div class="achievement-item">
-                <span><i class="fas fa-brochure"></i> パンフレット用パースデザイン（製品・建築ビジュアル）</span>
-                <a href="https://drive.google.com/file/d/1tsQbH4rNuNIzVVtqG5S-Hj5p2q9UP8wt/view?usp=sharing" class="portfolio-link" target="_blank" rel="noopener noreferrer">ポートフォリオを見る →</a>
-            </div>
-            <div class="achievement-item">
-                <span><i class="fas fa-file-signature"></i> 中小企業向け 競合入札用パンフレットデザイン</span>
-                <a href="https://drive.google.com/file/d/1tsQbH4rNuNIzVVtqG5S-Hj5p2q9UP8wt/view?usp=sharing" class="portfolio-link" target="_blank" rel="noopener noreferrer">ポートフォリオを見る →</a>
-            </div>
-            <div class="achievement-item">
-                <span><i class="fas fa-palette"></i> チラシ・販促ツール / デザイン全般の制作ディレクション</span>
-                <a href="https://drive.google.com/file/d/1tsQbH4rNuNIzVVtqG5S-Hj5p2q9UP8wt/view?usp=sharing" class="portfolio-link" target="_blank" rel="noopener noreferrer">ポートフォリオを見る →</a>
-            </div>
-            <div class="achievement-item">
-                <span><i class="fas fa-cube"></i> CAD図面からのリアリスティックパース / 空間レンダリング</span>
-                <a href="https://drive.google.com/file/d/1tsQbH4rNuNIzVVtqG5S-Hj5p2q9UP8wt/view?usp=sharing" class="portfolio-link" target="_blank" rel="noopener noreferrer">ポートフォリオを見る →</a>
-            </div>
-            <div class="achievement-item">
-                <span><i class="fas fa-chart-line"></i> 企業ブランディング × パースを用いたプレゼン資料</span>
-                <a href="https://drive.google.com/file/d/1tsQbH4rNuNIzVVtqG5S-Hj5p2q9UP8wt/view?usp=sharing" class="portfolio-link" target="_blank" rel="noopener noreferrer">ポートフォリオを見る →</a>
-            </div>
-            <div class="achievement-item">
-                <span><i class="fas fa-baseball-ball"></i> ソフトボールチーム『マーメイド』公式サイト制作・運営</span>
-                <a href="https://fri3789.github.io/marmaid/" class="portfolio-link" target="_blank" rel="noopener noreferrer">サイトを見る →</a>
-            </div>
-            <div class="note-text">※ 「ポートフォリオを見る」は共通のGoogle Drive作品ファイルを開きます。マーメイドのみ専用サイトです。</div>
+            <div class="achievement-item"><span><i class="fas fa-building"></i> 某大手プロジェクト パースデザイン（コンペティション用）</span><a href="https://drive.google.com/file/d/1tsQbH4rNuNIzVVtqG5S-Hj5p2q9UP8wt/view?usp=sharing" class="portfolio-link" target="_blank">ポートフォリオを見る →</a></div>
+            <div class="achievement-item"><span><i class="fas fa-brochure"></i> パンフレット用パースデザイン（製品・建築ビジュアル）</span><a href="https://drive.google.com/file/d/1tsQbH4rNuNIzVVtqG5S-Hj5p2q9UP8wt/view?usp=sharing" class="portfolio-link" target="_blank">ポートフォリオを見る →</a></div>
+            <div class="achievement-item"><span><i class="fas fa-file-signature"></i> 中小企業向け 競合入札用パンフレットデザイン</span><a href="https://drive.google.com/file/d/1tsQbH4rNuNIzVVtqG5S-Hj5p2q9UP8wt/view?usp=sharing" class="portfolio-link" target="_blank">ポートフォリオを見る →</a></div>
+            <div class="achievement-item"><span><i class="fas fa-palette"></i> チラシ・販促ツール / デザイン全般の制作ディレクション</span><a href="https://drive.google.com/file/d/1tsQbH4rNuNIzVVtqG5S-Hj5p2q9UP8wt/view?usp=sharing" class="portfolio-link" target="_blank">ポートフォリオを見る →</a></div>
+            <div class="achievement-item"><span><i class="fas fa-cube"></i> CAD図面からのリアリスティックパース / 空間レンダリング</span><a href="https://drive.google.com/file/d/1tsQbH4rNuNIzVVtqG5S-Hj5p2q9UP8wt/view?usp=sharing" class="portfolio-link" target="_blank">ポートフォリオを見る →</a></div>
+            <div class="achievement-item"><span><i class="fas fa-chart-line"></i> 企業ブランディング × パースを用いたプレゼン資料</span><a href="https://drive.google.com/file/d/1tsQbH4rNuNIzVVtqG5S-Hj5p2q9UP8wt/view?usp=sharing" class="portfolio-link" target="_blank">ポートフォリオを見る →</a></div>
+            <div class="achievement-item"><span><i class="fas fa-baseball-ball"></i> ソフトボールチーム『マーメイド』公式サイト制作・運営</span><a href="https://fri3789.github.io/marmaid/" class="portfolio-link" target="_blank">サイトを見る →</a></div>
+            <div class="note-text">※ 「ポートフォリオを見る」は共通のGoogle Drive作品ファイルです（マーメイドを除く）。</div>
         </div>
     </div>
 </div>
 
-<!-- お問い合わせフォーム (自動送信) -->
-<div class="contact-form-section" id="contactFormSection">
-    <div class="container">
-        <div class="form-container">
-            <h2>Inquiry</h2>
-            <p>パース制作・デザイン相談・お仕事依頼はこちらからお気軽にご連絡ください。</p>
-            <form id="contactForm" action="https://formsubmit.co/zznjip@gmail.com" method="POST">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://kaitosaito.design/thanks">
-                <input type="hidden" name="_subject" value="ポートフォリオサイトより問い合わせ（齊藤 快途）">
-                <div class="input-group"><input type="text" name="name" placeholder="お名前 / Name" required></div>
-                <div class="input-group"><input type="email" name="email" placeholder="メールアドレス / Email" required></div>
-                <div class="input-group"><textarea name="message" placeholder="お問い合わせ内容 / プロジェクト詳細" required></textarea></div>
-                <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> 送信する</button>
-                <div class="form-status" id="formStatus"></div>
-            </form>
+<!-- ==================== 新しいお問い合わせフォーム（mailto方式） ==================== -->
+<div class="contact-form-section" id="contact">
+    <div class="form-container">
+        <h2>Contact</h2>
+        <p>お問い合わせはこちらから。送信ボタンを押すと、メールアプリが開きます。</p>
+        <form id="contactFormMailto">
+            <div class="form-group">
+                <label for="name">お名前 <span style="color:#ff8a5c;">*</span></label>
+                <input type="text" id="name" name="name" placeholder="例: 齊藤 快途" required>
+            </div>
+            <div class="form-group">
+                <label for="email">メールアドレス <span style="color:#ff8a5c;">*</span></label>
+                <input type="email" id="email" name="email" placeholder="your-email@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="message">お問い合わせ内容 <span style="color:#ff8a5c;">*</span></label>
+                <textarea id="message" name="message" placeholder="パース制作のご依頼やご質問など、お気軽にご記入ください。" required></textarea>
+            </div>
+            <button type="button" class="btn-submit" id="submitMailtoBtn">
+                <i class="fas fa-envelope" style="margin-right: 8px;"></i> 送信する（メールアプリを開く）
+            </button>
+        </form>
+        <div class="info-message">
+            <i class="fas fa-info-circle"></i> メールアプリが自動的に開きます。内容をご確認の上、送信してください。<br>
+            もしアプリが開かない場合は、<strong>zznjip@gmail.com</strong> 宛に直接ご連絡ください。
         </div>
     </div>
 </div>
+<!-- ====================================================================== -->
 
 <footer>
     <div class="container">© 2026 Kaito Saito — Design Creates The Future.</div>
@@ -440,50 +443,85 @@
 
 <script>
     (function() {
-        // ポートフォリオ画像クリックで実績リスト表示/非表示
-        const btnWrapper = document.getElementById('portfolioImageBtn');
-        const achievementsDiv = document.getElementById('achievementsList');
-        if (btnWrapper && achievementsDiv) {
-            btnWrapper.addEventListener('click', (e) => {
+        // PORTFOLIOボタンのトグル機能
+        const btn = document.getElementById('portfolioImageBtn');
+        const list = document.getElementById('achievementsList');
+        if(btn && list) {
+            btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                achievementsDiv.classList.toggle('show');
-                if (achievementsDiv.classList.contains('show')) {
-                    setTimeout(() => {
-                        achievementsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    }, 100);
+                list.classList.toggle('show');
+                if(list.classList.contains('show')) {
+                    setTimeout(() => list.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
                 }
             });
         }
 
-        // お問い合わせ送信時のステータス表示
-        const form = document.getElementById('contactForm');
-        const statusDiv = document.getElementById('formStatus');
-        if (form) {
-            form.addEventListener('submit', () => {
-                statusDiv.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> 送信中...';
-                statusDiv.style.color = "#aad0ff";
-            });
-        }
-
-        // スムーススクロール (ナビ)
+        // ナビゲーションのスムーススクロール
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
-                if (targetId && targetId !== '#') {
-                    const targetEl = document.querySelector(targetId);
-                    if (targetEl) {
+                if(targetId && targetId !== '#') {
+                    const target = document.querySelector(targetId);
+                    if(target) {
                         e.preventDefault();
-                        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 }
             });
         });
 
-        // 画像フォールバックの最終確認（すでにonerrorで二重対応済みですが念のため）
-        const mainImg = document.querySelector('.portfolio-button img');
-        if (mainImg && mainImg.complete && mainImg.naturalWidth === 0) {
-            mainImg.src = 'https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop';
+        // ==================== mailto フォームの処理（「チームマーメイド」と同じ方式） ====================
+        const sendBtn = document.getElementById('submitMailtoBtn');
+        if (sendBtn) {
+            sendBtn.addEventListener('click', function() {
+                // フォームの値を取得
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                // 簡単なバリデーション
+                if (!name || !email || !message) {
+                    alert('すべての項目を入力してください。');
+                    return;
+                }
+                if (!email.includes('@') || !email.includes('.')) {
+                    alert('有効なメールアドレスを入力してください。');
+                    return;
+                }
+
+                // メールの件名を設定
+                const subject = `【ポートフォリオサイト】 ${name} 様よりお問い合わせ`;
+                
+                // メール本文を構築（フォーマットを整える）
+                const body = `お問い合わせありがとうございます。
+以下の内容でメールを送信します。
+--------------------------------------------------
+お名前: ${name}
+メールアドレス: ${email}
+--------------------------------------------------
+【お問い合わせ内容】
+${message}
+--------------------------------------------------
+※ このメールはポートフォリオサイトのフォームから送信されました。
+直接用があれば、上記のメールアドレスへご返信ください。`;
+
+                // 特殊文字をエスケープ（mailto: 用）
+                const encodedSubject = encodeURIComponent(subject);
+                const encodedBody = encodeURIComponent(body);
+
+                // mailtoリンクを生成（Bcc: zznjip@gmail.com も追加）
+                const mailtoLink = `mailto:zznjip@gmail.com?subject=${encodedSubject}&body=${encodedBody}&bcc=zznjip@gmail.com`;
+                
+                // メールクライアントを開く
+                window.location.href = mailtoLink;
+                
+                // ユーザーに確認メッセージを表示
+                setTimeout(() => {
+                    alert('メールアプリが開きました。内容をご確認の上、送信ボタンを押してください。');
+                }, 100);
+            });
         }
+        // ====================================================================
     })();
 </script>
 </body>
