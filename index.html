@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
-    <title>Kaito Saito | CADパースデザインポートフォリオ</title>
+    <title>齋藤 快途 | パースデザインポートフォリオ＋クリエイティブエール</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -18,6 +18,7 @@
             color: #eef4ff;
             line-height: 1.5;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
         :root {
             --glow-blue: #2f6ea2;
@@ -240,8 +241,6 @@
             color: #9bbce5;
             text-align: center;
         }
-        
-        /* ==================== 新しいメールフォームのスタイル ==================== */
         .contact-form-section {
             padding: 70px 0;
             border-top: 1px solid var(--border-dim);
@@ -277,8 +276,7 @@
             font-weight: 500;
             color: #cde2fc;
         }
-        .form-group input,
-        .form-group textarea {
+        .form-group input, .form-group textarea {
             width: 100%;
             background: rgba(1, 12, 28, 0.8);
             border: 1px solid var(--border-dim);
@@ -287,10 +285,8 @@
             font-size: 1rem;
             color: white;
             font-family: inherit;
-            transition: 0.2s;
         }
-        .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group input:focus, .form-group textarea:focus {
             outline: none;
             border-color: var(--glow-blue);
             box-shadow: 0 0 0 2px rgba(47, 110, 162, 0.3);
@@ -311,7 +307,6 @@
             cursor: pointer;
             transition: 0.2s;
             font-family: inherit;
-            margin-top: 10px;
         }
         .btn-submit:hover {
             background: #4183bb;
@@ -327,12 +322,73 @@
             text-align: left;
             border-left: 3px solid var(--glow-blue);
         }
-        .info-message i {
-            margin-right: 8px;
-            color: var(--glow-blue);
+        .floating-cheer {
+            position: fixed;
+            bottom: 30px;
+            right: 25px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #ff9a5f, #ff4d6d);
+            border-radius: 60px;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: 700;
+            color: white;
+            border: none;
+            backdrop-filter: blur(4px);
         }
-        /* ==================== スタイルここまで ==================== */
-
+        .floating-cheer:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 28px rgba(255, 77, 109, 0.5);
+        }
+        .floating-cheer i {
+            font-size: 1.5rem;
+        }
+        .cheer-counter {
+            background: rgba(0,0,0,0.6);
+            border-radius: 40px;
+            padding: 3px 10px;
+            font-size: 0.9rem;
+        }
+        .cheer-message {
+            position: fixed;
+            pointer-events: none;
+            font-size: 1rem;
+            font-weight: 600;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(12px);
+            padding: 6px 14px;
+            border-radius: 60px;
+            color: #ffecb3;
+            white-space: nowrap;
+            z-index: 2000;
+            animation: floatUp 1.8s ease-out forwards;
+            border-left: 3px solid #ffb347;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        @keyframes floatUp {
+            0% { opacity: 1; transform: translateY(0) scale(1); }
+            100% { opacity: 0; transform: translateY(-120px) scale(0.9); }
+        }
+        .star-burst {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: radial-gradient(circle, rgba(255,215,0,0.3) 0%, rgba(255,215,0,0) 80%);
+            animation: flashFade 0.8s ease-out;
+            z-index: 3000;
+        }
+        @keyframes flashFade {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
         footer {
             text-align: center;
             padding: 40px 0 48px;
@@ -345,18 +401,14 @@
             .hero { gap: 32px; padding: 40px 0 60px; }
             .achievement-item { flex-direction: column; align-items: flex-start; gap: 8px; }
             .portfolio-link { white-space: normal; margin-left: 28px; }
-            .form-container { margin: 0 20px; padding: 32px 24px; }
-        }
-        @media (max-width: 550px) {
-            .navbar { flex-direction: column; align-items: flex-start; }
-            .portfolio-button img { max-width: 100%; }
+            .floating-cheer { padding: 8px 18px; bottom: 20px; right: 16px; }
         }
     </style>
 </head>
 <body>
 <div class="container">
     <nav class="navbar">
-        <div class="logo"><a href="#">Kaito<span>Saito</span></a></div>
+        <div class="logo"><a href="#">齋藤<span>快途</span></a></div>
         <ul class="nav-links">
             <li><a href="#portfolioBtnSection">PORTFOLIO</a></li>
             <li><a href="#contact">CONTACT</a></li>
@@ -365,7 +417,7 @@
     <div class="hero">
         <div class="hero-left">
             <div class="hero-tagline">Design<br>Creates<br>The Future.</div>
-            <div class="hero-name">齊藤 快途 <small>Kaito Saito</small></div>
+            <div class="hero-name">齋藤 快途 <small>Kaito Saito</small></div>
             <div class="hero-desc">CADから生み出す確かなパース / デザインで価値を創造。<br>某大手プロジェクト、入札用パンフレットからチラシまで。</div>
             <div class="skill-badge">
                 <span>CAD / 3Dパース</span><span>3ds Max / V-Ray</span><span>Adobe Creative Cloud</span><span>パースデザイン</span>
@@ -383,7 +435,6 @@
     </div>
 </div>
 
-<!-- PORTFOLIO セクション（夜景画像） -->
 <div class="portfolio-section" id="portfolioBtnSection">
     <div class="container">
         <div class="section-title">PORTFOLIO</div>
@@ -407,15 +458,14 @@
     </div>
 </div>
 
-<!-- ==================== 新しいお問い合わせフォーム（mailto方式） ==================== -->
 <div class="contact-form-section" id="contact">
     <div class="form-container">
         <h2>Contact</h2>
-        <p>お問い合わせはこちらから。送信ボタンを押すと、メールアプリが開きます。</p>
+        <p>お問い合わせはこちらから。メールアプリが開きます。</p>
         <form id="contactFormMailto">
             <div class="form-group">
                 <label for="name">お名前 <span style="color:#ff8a5c;">*</span></label>
-                <input type="text" id="name" name="name" placeholder="例: 齊藤 快途" required>
+                <input type="text" id="name" name="name" placeholder="例: 齋藤 快途" required>
             </div>
             <div class="form-group">
                 <label for="email">メールアドレス <span style="color:#ff8a5c;">*</span></label>
@@ -430,33 +480,36 @@
             </button>
         </form>
         <div class="info-message">
-            <i class="fas fa-info-circle"></i> メールアプリが自動的に開きます。内容をご確認の上、送信してください。<br>
-            もしアプリが開かない場合は、<strong>zznjip@gmail.com</strong> 宛に直接ご連絡ください。
+            <i class="fas fa-info-circle"></i> メールアプリが自動的に開きます。内容をご確認の上、送信してください。
         </div>
     </div>
 </div>
-<!-- ====================================================================== -->
 
 <footer>
-    <div class="container">© 2026 Kaito Saito — Design Creates The Future.</div>
+    <div class="container">© 2026 齋藤 快途 — Design Creates The Future.</div>
 </footer>
+
+<div class="floating-cheer" id="cheerButton">
+    <i class="fas fa-hands-clapping"></i>
+    <span>応援する</span>
+    <span class="cheer-counter" id="cheerCount">0</span>
+</div>
 
 <script>
     (function() {
-        // PORTFOLIOボタンのトグル機能
-        const btn = document.getElementById('portfolioImageBtn');
-        const list = document.getElementById('achievementsList');
-        if(btn && list) {
-            btn.addEventListener('click', (e) => {
+        // Portfolio トグル
+        const portfolioBtn = document.getElementById('portfolioImageBtn');
+        const achievementsDiv = document.getElementById('achievementsList');
+        if(portfolioBtn && achievementsDiv) {
+            portfolioBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                list.classList.toggle('show');
-                if(list.classList.contains('show')) {
-                    setTimeout(() => list.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
+                achievementsDiv.classList.toggle('show');
+                if(achievementsDiv.classList.contains('show')) {
+                    setTimeout(() => achievementsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
                 }
             });
         }
-
-        // ナビゲーションのスムーススクロール
+        // ナビスクロール
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
@@ -469,59 +522,84 @@
                 }
             });
         });
-
-        // ==================== mailto フォームの処理（「チームマーメイド」と同じ方式） ====================
+        // mailto フォーム
         const sendBtn = document.getElementById('submitMailtoBtn');
-        if (sendBtn) {
+        if(sendBtn) {
             sendBtn.addEventListener('click', function() {
-                // フォームの値を取得
                 const name = document.getElementById('name').value.trim();
                 const email = document.getElementById('email').value.trim();
                 const message = document.getElementById('message').value.trim();
-
-                // 簡単なバリデーション
-                if (!name || !email || !message) {
-                    alert('すべての項目を入力してください。');
-                    return;
-                }
-                if (!email.includes('@') || !email.includes('.')) {
-                    alert('有効なメールアドレスを入力してください。');
-                    return;
-                }
-
-                // メールの件名を設定
+                if (!name || !email || !message) { alert('すべての項目を入力してください。'); return; }
+                if (!email.includes('@') || !email.includes('.')) { alert('有効なメールアドレスを入力してください。'); return; }
                 const subject = `【ポートフォリオサイト】 ${name} 様よりお問い合わせ`;
-                
-                // メール本文を構築（フォーマットを整える）
-                const body = `お問い合わせありがとうございます。
-以下の内容でメールを送信します。
---------------------------------------------------
-お名前: ${name}
-メールアドレス: ${email}
---------------------------------------------------
-【お問い合わせ内容】
-${message}
---------------------------------------------------
-※ このメールはポートフォリオサイトのフォームから送信されました。
-直接用があれば、上記のメールアドレスへご返信ください。`;
-
-                // 特殊文字をエスケープ（mailto: 用）
-                const encodedSubject = encodeURIComponent(subject);
-                const encodedBody = encodeURIComponent(body);
-
-                // mailtoリンクを生成（Bcc: zznjip@gmail.com も追加）
-                const mailtoLink = `mailto:zznjip@gmail.com?subject=${encodedSubject}&body=${encodedBody}&bcc=zznjip@gmail.com`;
-                
-                // メールクライアントを開く
-                window.location.href = mailtoLink;
-                
-                // ユーザーに確認メッセージを表示
-                setTimeout(() => {
-                    alert('メールアプリが開きました。内容をご確認の上、送信ボタンを押してください。');
-                }, 100);
+                const body = `お問い合わせありがとうございます。\n以下の内容で送信します。\n--------------------------------------------------\nお名前: ${name}\nメールアドレス: ${email}\n--------------------------------------------------\n【お問い合わせ内容】\n${message}\n--------------------------------------------------`;
+                window.location.href = `mailto:zznjip@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}&bcc=zznjip@gmail.com`;
+                setTimeout(() => alert('メールアプリが開きました。内容を確認して送信してください。'), 100);
             });
         }
-        // ====================================================================
+        
+        // 応援機能 (エール)
+        let cheerTotal = localStorage.getItem('kaito_cheer_total') ? parseInt(localStorage.getItem('kaito_cheer_total')) : 0;
+        const cheerCountSpan = document.getElementById('cheerCount');
+        const cheerBtn = document.getElementById('cheerButton');
+        if(cheerCountSpan) cheerCountSpan.innerText = cheerTotal;
+        
+        const cheerMessages = [
+            "🎉 その発想、すごい！", "✨ もっと見たい！", "🔥 クールなパース！", "💪 次のプロジェクト楽しみ", "🌟 インスピレーション湧く",
+            "🎨 色使いが天才的", "🏆 クライアント喜ぶはず", "🚀 未来をデザインしてる", "💎 唯一無二のセンス", "🌈 この世界観すき",
+            "🤝 一緒に仕事したい", "📐 パースのプロだ", "⚡ デザインで変わる", "🎯 構図が完璧", "🍀 最高のクリエイター",
+            "🇯🇵 齋藤さんの感性が光る", "💡 CADマスター", "🖌️ 美しい光の表現", "🎯 プレゼン必勝", "🏅 入札成功間違いなし",
+            "💬 もっとシェアしたい", "🔮 未来を形にする力", "⭐ ずっと応援してます", "🎈 新しい挑戦を楽しみに"
+        ];
+        
+        function spawnCheerMessage() {
+            const msgDiv = document.createElement('div');
+            const randomMsg = cheerMessages[Math.floor(Math.random() * cheerMessages.length)];
+            msgDiv.className = 'cheer-message';
+            msgDiv.innerText = randomMsg;
+            const randX = 10 + Math.random() * 80;
+            msgDiv.style.left = randX + '%';
+            msgDiv.style.bottom = '30px';
+            document.body.appendChild(msgDiv);
+            setTimeout(() => { if(msgDiv.parentNode) msgDiv.remove(); }, 1800);
+        }
+        
+        let milestone = 5;
+        function triggerMilestoneEffect(currentTotal) {
+            if(currentTotal % milestone === 0 && currentTotal !== 0) {
+                const burst = document.createElement('div');
+                burst.className = 'star-burst';
+                document.body.appendChild(burst);
+                setTimeout(() => burst.remove(), 800);
+                for(let i=0;i<5;i++) setTimeout(() => spawnCheerMessage(), i*100);
+            }
+        }
+        
+        if(cheerBtn) {
+            cheerBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                cheerTotal++;
+                localStorage.setItem('kaito_cheer_total', cheerTotal);
+                if(cheerCountSpan) cheerCountSpan.innerText = cheerTotal;
+                spawnCheerMessage();
+                setTimeout(() => spawnCheerMessage(), 80);
+                setTimeout(() => spawnCheerMessage(), 150);
+                triggerMilestoneEffect(cheerTotal);
+                cheerBtn.style.transform = 'scale(1.05)';
+                setTimeout(() => { if(cheerBtn) cheerBtn.style.transform = ''; }, 200);
+            });
+        }
+        
+        setTimeout(() => {
+            const welcome = document.createElement('div');
+            welcome.className = 'cheer-message';
+            welcome.innerText = "🎵 あなたのポートフォリオにエール！ 🎵";
+            welcome.style.left = '50%';
+            welcome.style.bottom = '50px';
+            welcome.style.background = "#ff8c42cc";
+            document.body.appendChild(welcome);
+            setTimeout(() => welcome.remove(), 2500);
+        }, 800);
     })();
 </script>
 </body>
